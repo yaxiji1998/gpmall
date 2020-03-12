@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <el-container>
+            <el-aside width="200px" >
+                <el-menu :default-openeds="['1']"
+                >
+                    <el-submenu index="1">
+                        <template slot="title"><i class="el-icon-message"></i>商品管理</template>
+                        <el-menu-item-group>
+                            <a href="addNewGood.html"><el-menu-item index="1-1">添加新商品</el-menu-item></a>
+                            <a href="main.html"><el-menu-item index="1-2">管理已有商品</el-menu-item></a>
+                        </el-menu-item-group>
+
+                    </el-submenu>
+                    <el-submenu index="2">
+                        <template slot="title"><i class="el-icon-menu"></i>类型管理</template>
+                        <el-menu-item-group>
+                            <a href="manageType.html"><el-menu-item index="2-1">已有类型管理</el-menu-item></a>
+                            <a href="addNewType.html"><el-menu-item index="2-2">添加新类型</el-menu-item></a>
+                        </el-menu-item-group>
+
+                    </el-submenu>
+                    <el-submenu index="3">
+                        <template slot="title"><i class="el-icon-setting"></i>订单管理</template>
+                        <el-menu-item-group>
+                            <a href="notPayOder.html"><el-menu-item index="3-1">未付款订单</el-menu-item></a>
+                            <a href="paidOrder.html"><el-menu-item index="3-2">已付款订单</el-menu-item></a>
+                            <a href="finishedOrder.html"><el-menu-item index="3-2">已完成订单</el-menu-item></a>
+                        </el-menu-item-group>
+
+                    </el-submenu>
+                    <el-submenu index="4">
+                        <template slot="title"><i class="el-icon-setting"></i>用户管理</template>
+                        <el-menu-item-group>
+                            <a href="userManage.html"><el-menu-item index="3-1">用户管理</el-menu-item></a>
+
+                        </el-menu-item-group>
+
+                    </el-submenu>
+                </el-menu>
+            </el-aside>
+
+            <el-container>
+                <el-header style="text-align: right; font-size: 12px">
+                    <el-dropdown>
+                        <i class="el-icon-setting" style="margin-right: 15px"></i>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>查看</el-dropdown-item>
+                            <el-dropdown-item>新增</el-dropdown-item>
+                            <el-dropdown-item>修改</el-dropdown-item>
+                            <el-dropdown-item>删除</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                    <span>王小虎</span>
+                </el-header>
+
+                <el-main>
+                    <div style="margin: 20px;"></div>
+                    <el-form :ref="good" :label-position="labelPosition" label-width="80px" :model="good">
+                        <el-form-item label="商品名称">
+                            <el-input v-model="good.gname"></el-input>
+                        </el-form-item>
+                        <el-form-item label="原价">
+                            <el-input v-model="good.goprice"></el-input>
+                        </el-form-item>
+                        <el-form-item label="现价">
+                            <el-input v-model="good.grprice"></el-input>
+                        </el-form-item>
+                        <el-form-item label="库存">
+                            <el-input v-model="good.gstore"></el-input>
+                        </el-form-item>
+                        <el-form-item label="类型">
+                            <el-input v-model="good.goodstype_id"></el-input>
+                        </el-form-item>
+                        <el-form-item>
+                            <el-button type="primary" @click="submitForm()">提交</el-button>
+                        </el-form-item>
+                    </el-form>
+                </el-main>
+
+            </el-container>
+           
+        
+        </el-container>
+       
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    gid:0,
+                    good: {
+
+
+                    }
+                };
+            },
+            mounted(){
+                gid=this.getId("id");
+                this.init();
+            },
+            methods: {
+
+                update(){},
+                add(){},
+                next() {
+                    if (this.active++ > 2) this.active = 0;
+                },
+                getId(name){
+                    const reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                    const urlObj = window.location;
+                    var r = urlObj.href.indexOf('#') > -1 ? urlObj.hash.split("?")[1].match(reg) : urlObj.search.substr(1).match(reg);
+                    if (r != null) return unescape(r[2]); return null;
+                },
+                init(){
+                    let param = new URLSearchParams();
+                    param.append('id',gid);
+                    axios.post("/gpmall/good/findGoodById.do",param).then(function (response) {
+                        var jsonObj = JSON.parse(JSON.stringify(response.data));
+                        vm.good = jsonObj;
+                    }).catch(function (error) {
+                        console.log(error)
+                    })
+                },
+                submitForm(){
+                    alert(vm.good.goodsType.typeName);
+                    let param = new URLSearchParams();
+                    param.append('id',vm.good.id);
+                    param.append('gname',vm.good.gname);
+                    param.append('goprice',vm.good.goprice);
+                    param.append('grprice',vm.good.grprice);
+                    param.append('gstore',vm.good.gstore);
+                    param.append('gpicture',vm.good.gpicture);
+                    param.append('goodstype_id',vm.good.goodstype_id);
+                    param.append('goodsType.id',vm.good.goodsType.id);
+                    param.append('goodsType.typeName',vm.good.goodsType.typeName);
+                    axios.post("/gpmall/good/updateGood.do",param).then(function (response) {
+                        let result = response.data.result;
+                        if(result=='true'){
+                            alert("update successed")
+                        }else {
+                            alert("error!");
+                        }
+                    }).catch(function (error) {
+                        console.log(error)
+                    })
+                }
+
+            },
+
+        })
+    </script>
+
+    <style scoped>
+        .el-header {
+            height: 60px;
+            font-size: 20px;
+            line-height: 60px;
+            color: #333;
+            background-color: #b3c0d1;
+        }
+
+        .el-container {
+            height: 100% ;
+        }
+
+        .el-aside {
+            height: 100vh;
+        }
+
+        .el-menu {
+            background: #b3c0d1;;
+            height: 100%;
+        }
+        .el-button+.el-button {
+            margin-left: 2px;
+        }
+    </style>
+</body>
+
+</html>

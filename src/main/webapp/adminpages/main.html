@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <el-container>
+            <el-aside width="200px" >
+                <el-menu :default-openeds="['1']"
+                >
+                    <el-submenu index="1">
+                        <template slot="title"><i class="el-icon-message"></i>商品管理</template>
+                        <el-menu-item-group>
+                            <a href="addNewGood.html"><el-menu-item index="1-1">添加新商品</el-menu-item></a>
+                            <a href="main.html"><el-menu-item index="1-2">管理已有商品</el-menu-item></a>
+                        </el-menu-item-group>
+
+                    </el-submenu>
+                    <el-submenu index="2">
+                        <template slot="title"><i class="el-icon-menu"></i>类型管理</template>
+                        <el-menu-item-group>
+                            <a href="manageType.html"><el-menu-item index="2-1">已有类型管理</el-menu-item></a>
+                            <a href="addNewType.html"><el-menu-item index="2-2">添加新类型</el-menu-item></a>
+                        </el-menu-item-group>
+
+                    </el-submenu>
+                    <el-submenu index="3">
+                        <template slot="title"><i class="el-icon-setting"></i>订单管理</template>
+                        <el-menu-item-group>
+                            <a href="notPayOder.html"><el-menu-item index="3-1">未付款订单</el-menu-item></a>
+                            <a href="paidOrder.html"><el-menu-item index="3-2">已付款订单</el-menu-item></a>
+                            <a href="finishedOrder.html"><el-menu-item index="3-2">已完成订单</el-menu-item></a>
+                        </el-menu-item-group>
+
+                    </el-submenu>
+                    <el-submenu index="4">
+                        <template slot="title"><i class="el-icon-setting"></i>用户管理</template>
+                        <el-menu-item-group>
+                            <a href="userManage.html"><el-menu-item index="3-1">用户管理</el-menu-item></a>
+
+                        </el-menu-item-group>
+
+                    </el-submenu>
+                </el-menu>
+            </el-aside>
+
+            <el-container>
+                <el-header style="text-align: right; font-size: 12px">
+                    <el-dropdown>
+                        <i class="el-icon-setting" style="margin-right: 15px"></i>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>查看</el-dropdown-item>
+                            <el-dropdown-item>新增</el-dropdown-item>
+                            <el-dropdown-item>修改</el-dropdown-item>
+                            <el-dropdown-item>删除</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                    <span>王小虎</span>
+                </el-header>
+
+                <el-main>
+                    <el-table :data="tableData" style="width: 100%" max-height="100%">
+                        <el-table-column fixed prop="id" label="编号" width="150">
+                        </el-table-column>
+                        <el-table-column prop="gname" label="商品名称" width="120">
+                        </el-table-column>
+                        <el-table-column prop="goprice" label="原价" width="120">
+                        </el-table-column>
+                        <el-table-column prop="grprice" label="现价" width="120">
+                        </el-table-column>
+                        <el-table-column prop="gstore" label="库存" width="300">
+                        </el-table-column>
+                        <el-table-column prop="goodstype_id" label="类型" width="120">
+                        </el-table-column>
+                        <el-table-column fixed="right" label="操作" width="120">
+                            <template slot-scope="scope" style="text-align: left">
+                                <el-button @click.native.prevent="deleteRow(scope.$index, tableData)"  type="text"
+                                    size="small">
+                                    删除
+                                </el-button>
+                                <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text"
+                                    size="small">
+                                </el-button>
+                                <el-button @click.native.prevent="update(scope.$index, tableData)" type="text"
+                                    size="small">
+                                    修改
+                                </el-button>
+
+                            </template>
+                        </el-table-column>
+                        
+                    </el-table>
+                </el-main>
+
+            </el-container>
+           
+        
+        </el-container>
+       
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data() {
+
+                return {
+                    item: {
+                        title: '标题',
+                        item: {
+                            date: '2016-05-02',
+                            name: '王小虎',
+                            address: '上海市普陀区金沙江路 1518 弄'
+                        }
+                    },
+                    active: 0,
+                    tableData: []
+                }
+            },
+            mounted(){
+                this.init();
+            },
+            methods: {
+                deleteRow(index, rows) {
+                    let param = new URLSearchParams();
+                    param.append('id',rows[index].id);
+                    axios.post("/gpmall/good/deleteGood.do",param).then(function (response) {
+                        let result = response.data.result;
+                        alert(result);
+                        if(result=='true'){
+                            vm.init();
+                        }else {
+                            alert("delete fail!");
+                        }
+                    }).catch(function (error) {
+                        console.log(error)
+                    })
+                    //rows.splice(index, 1);
+                },
+                update(){},
+                add(){},
+                next() {
+                    if (this.active++ > 2) this.active = 0;
+                },
+                init:function () {
+                    axios.post("/gpmall/good/findAllGood.do").then(function (response) {
+                        var jsonObj = JSON.parse(JSON.stringify(response.data));
+                        vm.tableData = jsonObj;
+                        console.log(vm.tableData[0].gname)
+                    }).catch(function (error) {
+                        console.log(error)
+                    })
+                }
+            },
+
+        })
+    </script>
+
+    <style scoped>
+        .el-header {
+            height: 60px;
+            font-size: 20px;
+            line-height: 60px;
+            color: #333;
+            background-color: #b3c0d1;
+        }
+
+        .el-container {
+            height: 100% ;
+        }
+
+        .el-aside {
+            height: 100vh;
+        }
+
+        .el-menu {
+            background: #b3c0d1;;
+            height: 100%;
+        }
+        .el-button+.el-button {
+            margin-left: 2px;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>后台登录</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- //for-mobile-apps -->
+    <link href="css/loginstyle.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+<div id="app">
+    <!-- main -->
+
+    <div class="main">
+
+        <h1>
+            后台登录系统
+        </h1>
+        <form>
+            <input type="text" v-model="username" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '用户名';}"
+                   required="">
+            <input type="password" v-model="password" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}"
+                   required="">
+            <input type="button" value="登录" v-on:click="login">
+        </form>
+    </div>
+    <div class="footer">
+
+    </div>
+    <!-- //main -->
+    </div>
+<script src="js/vue.js"></script>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            username:"",
+            password:""
+        },
+        methods:{
+            login:function () {
+                let param = new URLSearchParams();
+                param.append('username',app.username);
+                param.append('password',app.password);
+                axios.post("/gpmall/admin/login.do",param).then(function (response) {
+                    let result = response.data.result;
+                    if(result==true){
+                        location.replace("./main.html");
+                    }else {
+                        alert("username or password is wrong!");
+                    }
+                }).catch(function (error) {
+                    console.log(error)
+                })
+            }
+
+        }
+
+    });
+</script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>
