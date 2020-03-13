@@ -31,4 +31,9 @@ public class UserServiceImpl implements IUserService {
     public void register(User user) {
         userDao.addNewUser(user);
     }
+
+    @Override
+    public void modifyUserInfo(User user) {
+        userDao.modifyUserInfo(user);
+    }
 }

@@ -22,4 +22,14 @@ public class IUserDaoTest {
         User user = userDao.findByName("haha");
         System.out.println(user);
     }
+
+    @Test
+    public void modifyUserInfo(){
+        User user = userDao.findByName("haha");
+        System.out.println(user);
+        user.setAge(100);
+        userDao.modifyUserInfo(user);
+        user = userDao.findByName("haha");
+        System.out.println(user);
+    }
 }

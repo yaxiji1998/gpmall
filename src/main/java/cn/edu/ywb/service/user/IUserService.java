@@ -6,4 +6,6 @@ public interface IUserService {
     User login(String username, String password);
 
     void register(User user);
+
+    void modifyUserInfo(User user);
 }

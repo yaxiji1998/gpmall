@@ -6,7 +6,80 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2f33cc4-274e-430a-8a10-2eba136fb50e" name="Default Changelist" comment="" />
+    <list default="true" id="c2f33cc4-274e-430a-8a10-2eba136fb50e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/AddressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IAddressDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IOrderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/interceptor/InitInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/pojo/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/pojo/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IAddressService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/AddressServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/userpages/aside.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/userpages/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/userpages/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IAddressDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IOrderDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/cn/edu/ywb/service/user/impl/AddressServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/pojo/OrderBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/pojo/OrderDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/blog-details-left-sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/blog-details-left-sidebar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/blog-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/blog-details.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/blog-grid-full-width.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/blog-grid-full-width.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/blog-left-sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/blog-left-sidebar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/blog-right-sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/blog-right-sidebar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/compare.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/compare.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/contact-us.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/contact-us.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/index-2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/index-2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/login-register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/login-register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/my-account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/my-account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/product-details-affiliate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/product-details-affiliate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/product-details-group.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/product-details-group.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/product-details-variable.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/product-details-variable.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/product-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/product-details.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-full-3-col.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-full-3-col.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-full-4-col.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-full-4-col.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-right-sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-right-sidebar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/shop-list-full-width.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/shop-list-full-width.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/shop-list-left-sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/shop-list-left-sidebar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/shop-list-right-sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/shop-list-right-sidebar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/shop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/shop.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userpages/wishlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userpages/wishlist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IUserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IUserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/edu/ywb/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/edu/ywb/controller/user/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/edu/ywb/dao/user/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/edu/ywb/dao/user/IUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/edu/ywb/pojo/OrderBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/edu/ywb/pojo/OrderDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/edu/ywb/service/user/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/edu/ywb/service/user/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/edu/ywb/service/user/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/edu/ywb/service/user/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/cn/edu/ywb/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/cn/edu/ywb/controller/user/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/cn/edu/ywb/dao/user/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/cn/edu/ywb/dao/user/IUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/cn/edu/ywb/pojo/OrderBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/cn/edu/ywb/pojo/OrderDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/cn/edu/ywb/service/user/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/cn/edu/ywb/service/user/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/cn/edu/ywb/service/user/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/cn/edu/ywb/service/user/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/gpmall/WEB-INF/classes/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gpmall/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/gpmall/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gpmall/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/gpmall/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gpmall/userpages/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/gpmall/userpages/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gpmall/userpages/my-account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/gpmall/userpages/my-account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/edu/ywb/dao/user/IUserDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/edu/ywb/dao/user/IUserDaoTest.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,20 +96,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/cart.jsp">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1081">
-              <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="184">
+              <caret line="189" column="73" lean-forward="true" selection-start-line="189" selection-start-column="73" selection-end-line="189" selection-end-column="73" />
+              <folding>
+                <element signature="n#li#2;n#ul#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#header#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,41 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="943">
-              <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/CartController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/ICartService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/FocusController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="69">
+              <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -89,10 +123,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -107,11 +141,13 @@
       <find>姓名</find>
       <find>menu</find>
       <find>contain</find>
-      <find>box</find>
       <find>Flower</find>
       <find>payment</find>
       <find>pri-img</find>
       <find>.html</find>
+      <find>box</find>
+      <find>search-box</find>
+      <find>user-h</find>
     </findStrings>
     <replaceStrings>
       <replace>../css/</replace>
@@ -122,29 +158,55 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/userpages/shop-list-left-sidebar.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/userpages/shop-list-right-sidebar.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/userpages/wishlist.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/userpages/blog-details.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/ICartDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/interceptor/InitInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/springmvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/pojo/Order.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/pojo/Address.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IOrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/OrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IOrderDao.java" />
+        <option value="$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IOrderDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/AddressController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IAddressService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IAddressDao.java" />
+        <option value="$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IAddressDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/test/cn/edu/ywb/service/user/impl/AddressServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/AddressServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IUserDao.java" />
+        <option value="$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IUserDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/userpages/aside.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/userpages/footer.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/blog-details.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/blog-details-left-sidebar.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/blog-grid-full-width.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/blog-left-sidebar.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/blog-right-sidebar.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/userpages/cart.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/checkout.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/compare.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/contact-us.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/index-2.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/login-register.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/my-account.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/userpages/product-details.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/product-details-affiliate.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/product-details-group.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/product-details-variable.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/userpages/shop.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-full-3-col.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-full-4-col.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-right-sidebar.jsp" />
@@ -152,31 +214,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/shop-list-left-sidebar.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/shop-list-right-sidebar.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/wishlist.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/goodController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IGoodTypeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/GoodTypeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/admin/ITypeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/admin/impl/TypeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/admin/ITypeDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/UserGoodController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IFocusService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/FocusServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/FocusController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/interceptor/LoginInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IFocusDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IFocusDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/userpages/product-details.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/pojo/Cart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/ICartService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/CartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/ICartDao.java" />
-        <option value="$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/ICartDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/springmvc.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/userpages/shop.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpages/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/userpages/cart.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/CartController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/userpages/header.jsp" />
       </list>
     </option>
   </component>
@@ -193,20 +232,15 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
     <option name="height" value="728" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -254,16 +288,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ywb" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gpmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gpmall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ywb" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gpmall" type="b2602c69:ProjectViewProjectNode" />
@@ -390,15 +414,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="userpages" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gpmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gpmall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -429,12 +444,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="cn.edu.ywb.service.user.impl" />
       <recent name="cn.edu.ywb.dao.user" />
       <recent name="cn.edu.ywb.dao.admin" />
       <recent name="cn.edu.ywb.service.admin.impl" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\graduationProject\gpmall\src\main\webapp\adminpages" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cn.edu.ywb.dao.admin" />
+      <recent name="cn.edu.ywb.service.admin" />
+      <recent name="cn.edu.ywb.dao.user" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\graduationProject\gpmall\src\main\webapp\js" />
@@ -447,10 +465,8 @@
       <recent name="" />
       <recent name="BaseTest" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="cn.edu.ywb.dao.admin" />
-      <recent name="cn.edu.ywb.service.admin" />
-      <recent name="cn.edu.ywb.dao.user" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\graduationProject\gpmall\src\main\webapp\adminpages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -466,7 +482,23 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.93">
-    <configuration name="ICartDaoTest.addToCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddressServiceImplTest.initAddressByUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gpmall" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.ywb.service.user.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.edu.ywb.service.user.impl" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ywb.service.user.impl.AddressServiceImplTest" />
+      <option name="METHOD_NAME" value="initAddressByUserId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IAddressDaoTest.addNullAddressByUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gpmall" />
       <extension name="coverage">
         <pattern>
@@ -475,14 +507,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.edu.ywb.dao.user" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ywb.dao.user.ICartDaoTest" />
-      <option name="METHOD_NAME" value="addToCard" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ywb.dao.user.IAddressDaoTest" />
+      <option name="METHOD_NAME" value="addNullAddressByUserId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ICartDaoTest.findCartByUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IAddressDaoTest.modifyAddressById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gpmall" />
       <extension name="coverage">
         <pattern>
@@ -491,14 +523,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.edu.ywb.dao.user" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ywb.dao.user.ICartDaoTest" />
-      <option name="METHOD_NAME" value="findCartByUserId" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ywb.dao.user.IAddressDaoTest" />
+      <option name="METHOD_NAME" value="modifyAddressById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ICartDaoTest.updateById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IOrderDaoTest.receive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gpmall" />
       <extension name="coverage">
         <pattern>
@@ -507,14 +539,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.edu.ywb.dao.user" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ywb.dao.user.ICartDaoTest" />
-      <option name="METHOD_NAME" value="updateById" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ywb.dao.user.IOrderDaoTest" />
+      <option name="METHOD_NAME" value="receive" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IFocusDaoTest.addToWishList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IUserDaoTest.modifyUserInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gpmall" />
       <extension name="coverage">
         <pattern>
@@ -523,24 +555,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.edu.ywb.dao.user" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ywb.dao.user.IFocusDaoTest" />
-      <option name="METHOD_NAME" value="addToWishList" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IGoodDaoTest.findGoodByIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gpmall" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.edu.ywb.dao.admin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.edu.ywb.dao.admin" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ywb.dao.admin.IGoodDaoTest" />
-      <option name="METHOD_NAME" value="findGoodByIdTest" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ywb.dao.user.IUserDaoTest" />
+      <option name="METHOD_NAME" value="modifyUserInfo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -619,20 +635,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.IGoodDaoTest.findGoodByIdTest" />
-      <item itemvalue="JUnit.ICartDaoTest.addToCard" />
-      <item itemvalue="JUnit.IFocusDaoTest.addToWishList" />
-      <item itemvalue="JUnit.ICartDaoTest.findCartByUserId" />
-      <item itemvalue="JUnit.ICartDaoTest.updateById" />
       <item itemvalue="Tomcat Server.Tomcat 7.0.93" />
+      <item itemvalue="JUnit.IAddressDaoTest.modifyAddressById" />
+      <item itemvalue="JUnit.IOrderDaoTest.receive" />
+      <item itemvalue="JUnit.IAddressDaoTest.addNullAddressByUserId" />
+      <item itemvalue="JUnit.AddressServiceImplTest.initAddressByUserId" />
+      <item itemvalue="JUnit.IUserDaoTest.modifyUserInfo" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ICartDaoTest.updateById" />
-        <item itemvalue="JUnit.ICartDaoTest.findCartByUserId" />
-        <item itemvalue="JUnit.IFocusDaoTest.addToWishList" />
-        <item itemvalue="JUnit.ICartDaoTest.addToCard" />
-        <item itemvalue="JUnit.IGoodDaoTest.findGoodByIdTest" />
+        <item itemvalue="JUnit.IUserDaoTest.modifyUserInfo" />
+        <item itemvalue="JUnit.AddressServiceImplTest.initAddressByUserId" />
+        <item itemvalue="JUnit.IAddressDaoTest.addNullAddressByUserId" />
+        <item itemvalue="JUnit.IOrderDaoTest.receive" />
+        <item itemvalue="JUnit.IAddressDaoTest.modifyAddressById" />
       </list>
     </recent_temporary>
   </component>
@@ -651,7 +667,7 @@
       <workItem from="1582876020708" duration="47888000" />
       <workItem from="1583854772748" duration="3236000" />
       <workItem from="1583904399463" duration="44702000" />
-      <workItem from="1584017940168" duration="2164000" />
+      <workItem from="1584017940168" duration="35110000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1584019596103</created>
@@ -667,48 +683,56 @@
       <option name="project" value="LOCAL" />
       <updated>1584020033489</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first commit">
+      <created>1584020354137</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584020354137</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IGoodDaoTest_findAllTest - 2020.02.28 at 23h 29m 40s.xml">
-      <configuration name="IGoodDaoTest.findAllTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IGoodDaoTest_findGoodByIdTest - 2020.02.29 at 13h 26m 50s.xml">
-      <configuration name="IGoodDaoTest.findGoodByIdTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IGoodDaoTest_findGoodByIdTest - 2020.02.29 at 13h 27m 53s.xml">
-      <configuration name="IGoodDaoTest.findGoodByIdTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ICartDaoTest_addToCard - 2020.03.12 at 14h 11m 30s.xml">
-      <configuration name="ICartDaoTest.addToCard" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ICartDaoTest_addToCard - 2020.03.12 at 14h 13m 25s.xml">
-      <configuration name="ICartDaoTest.addToCard" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IFocusDaoTest_addToWishList - 2020.03.12 at 14h 29m 26s.xml">
-      <configuration name="IFocusDaoTest.addToWishList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IFocusDaoTest_addToWishList - 2020.03.12 at 14h 30m 34s.xml">
-      <configuration name="IFocusDaoTest.addToWishList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ICartDaoTest_findCartByUserId - 2020.03.12 at 15h 39m 46s.xml">
-      <configuration name="ICartDaoTest.findCartByUserId" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ICartDaoTest_findCartByUserId - 2020.03.12 at 15h 40m 03s.xml">
-      <configuration name="ICartDaoTest.findCartByUserId" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ICartDaoTest_updateById - 2020.03.12 at 16h 52m 28s.xml">
       <configuration name="ICartDaoTest.updateById" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="IAddressDaoTest_findAddressByUserId - 2020.03.13 at 14h 30m 05s.xml">
+      <configuration name="IAddressDaoTest.findAddressByUserId" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IOrderDaoTest_findOderByUserId - 2020.03.13 at 15h 08m 47s.xml">
+      <configuration name="IOrderDaoTest.findOderByUserId" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IAddressDaoTest_modifyAddressById - 2020.03.13 at 19h 03m 51s.xml">
+      <configuration name="IAddressDaoTest.modifyAddressById" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IOrderDaoTest_receive - 2020.03.13 at 19h 09m 12s.xml">
+      <configuration name="IOrderDaoTest.receive" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IAddressDaoTest_addNullAddressByUserId - 2020.03.13 at 21h 13m 54s.xml">
+      <configuration name="IAddressDaoTest.addNullAddressByUserId" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AddressServiceImplTest_initAddressByUserId - 2020.03.13 at 21h 16m 22s.xml">
+      <configuration name="AddressServiceImplTest.initAddressByUserId" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AddressServiceImplTest_initAddressByUserId - 2020.03.13 at 21h 16m 57s.xml">
+      <configuration name="AddressServiceImplTest.initAddressByUserId" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IUserDaoTest_modifyUserInfo - 2020.03.13 at 21h 23m 31s.xml">
+      <configuration name="IUserDaoTest.modifyUserInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IUserDaoTest_modifyUserInfo - 2020.03.13 at 21h 24m 08s.xml">
+      <configuration name="IUserDaoTest.modifyUserInfo" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135289000" />
+    <option name="totallyTimeSpent" value="168235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26172465" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26172465" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -718,7 +742,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32854864" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40350878" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4025559" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -727,7 +751,7 @@
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="11" side_tool="true" visible="true" weight="0.3290735" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3290735" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32854864" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
@@ -752,235 +776,126 @@
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        <state relative-caret-position="160">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/blog-details.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/blog-details-left-sidebar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/blog-grid-full-width.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/blog-left-sidebar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/blog-right-sidebar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/checkout.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/compare.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/contact-us.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/index-2.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/login-register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/my-account.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/product-details-affiliate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/product-details-group.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/product-details-variable.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-full-3-col.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-full-4-col.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-right-sidebar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-list-full-width.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-list-left-sidebar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-list-right-sidebar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/wishlist.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="2907" column="34" selection-start-line="2907" selection-start-column="34" selection-end-line="2907" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/GoodTypeServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IGoodTypeService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/admin/ITypeDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/pojo/Address.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/admin/impl/TypeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
           <folding>
-            <element signature="e#949#950#0" expanded="true" />
-            <element signature="e#976#977#0" expanded="true" />
+            <element signature="e#214#215#0" expanded="true" />
+            <element signature="e#239#240#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#268#269#0" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="e#510#511#0" expanded="true" />
+            <element signature="e#540#541#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/admin/ITypeService.java">
+    <entry file="file://$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IOrderDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        <state relative-caret-position="229">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#785#786#0" expanded="true" />
+            <element signature="e#819#820#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/UserGoodController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IOrderDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+        <state relative-caret-position="252">
+          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/pojo/Good.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/OrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="275">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+            <element signature="e#715#716#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IOrderService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
-          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/interceptor/LoginInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/OrderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        <state relative-caret-position="252">
+          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IFocusService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/AddressController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        <state relative-caret-position="91">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IAddressDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IAddressDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -991,161 +906,298 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IFocusDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IFocusDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/FocusServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/admin/IGoodDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="59" column="21" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/pojo/Cart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-          <folding>
-            <element signature="e#212#213#0" expanded="true" />
-            <element signature="e#239#240#0" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-            <element signature="e#309#310#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/ICartDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/ICartDao.java">
+    <entry file="file://$PROJECT_DIR$/src/test/cn/edu/ywb/service/user/impl/AddressServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/CartServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/AddressServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IAddressService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/cn/edu/ywb/dao/user/IUserDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/dao/user/IUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#552#553#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
+            <element signature="e#969#970#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/admin/GoodController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/IUserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="207">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/interceptor/LoginInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+        <state relative-caret-position="69">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/product-details.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="39" column="31" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        <state relative-caret-position="-575">
+          <caret line="134" column="1" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/javax/servlet/http/HttpSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="393" column="42" selection-start-line="393" selection-start-column="42" selection-end-line="393" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="59" column="42" lean-forward="true" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/aside.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="175" lean-forward="true" selection-start-line="175" selection-end-line="175" />
+          <folding>
+            <element signature="n#aside#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/footer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="120" column="9" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+          <folding>
+            <element signature="n#footer#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/blog-details.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="314" column="32" selection-start-line="314" selection-start-column="32" selection-end-line="314" selection-end-column="32" />
+          <folding>
+            <element signature="n#main#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/blog-details-left-sidebar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="314" column="32" selection-start-line="314" selection-start-column="32" selection-end-line="314" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/blog-grid-full-width.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="312" column="32" selection-start-line="312" selection-start-column="32" selection-end-line="312" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/blog-left-sidebar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="398" column="32" selection-start-line="398" selection-start-column="32" selection-end-line="398" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/blog-right-sidebar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="397" column="32" selection-start-line="397" selection-start-column="32" selection-end-line="397" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/cart.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
-          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        <state relative-caret-position="188">
+          <caret line="232" column="32" selection-start-line="232" selection-start-column="32" selection-end-line="232" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/checkout.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="458" column="32" selection-start-line="458" selection-start-column="32" selection-end-line="458" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/compare.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="189" column="32" selection-start-line="189" selection-start-column="32" selection-end-line="189" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/contact-us.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/index-2.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="914" column="32" selection-start-line="914" selection-start-column="32" selection-end-line="914" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/login-register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/my-account.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="410" column="32" selection-start-line="410" selection-start-column="32" selection-end-line="410" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/product-details.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="587" column="32" selection-start-line="587" selection-start-column="32" selection-end-line="587" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/product-details-affiliate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="504" column="32" selection-start-line="504" selection-start-column="32" selection-end-line="504" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/product-details-group.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="526" column="32" selection-start-line="526" selection-start-column="32" selection-end-line="526" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/product-details-variable.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="534" column="32" selection-start-line="534" selection-start-column="32" selection-end-line="534" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="209">
+          <caret line="1165" column="32" selection-start-line="1165" selection-start-column="32" selection-end-line="1165" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-full-3-col.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="985" column="32" selection-start-line="985" selection-start-column="32" selection-end-line="985" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-full-4-col.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="985" column="32" selection-start-line="985" selection-start-column="32" selection-end-line="985" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-grid-right-sidebar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="1151" column="32" selection-start-line="1151" selection-start-column="32" selection-end-line="1151" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-list-full-width.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="985" column="32" selection-start-line="985" selection-start-column="32" selection-end-line="985" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-list-left-sidebar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="1151" column="32" selection-start-line="1151" selection-start-column="32" selection-end-line="1151" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/shop-list-right-sidebar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="1148" lean-forward="true" selection-start-line="1148" selection-end-line="1148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/wishlist.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
+        <state relative-caret-position="69">
+          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/service/user/ICartService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpages/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/FocusController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="184">
+          <caret line="189" column="73" lean-forward="true" selection-start-line="189" selection-start-column="73" selection-end-line="189" selection-end-column="73" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ywb/controller/user/CartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="n#li#2;n#ul#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#header#0;n#!!top" />
           </folding>
         </state>
       </provider>

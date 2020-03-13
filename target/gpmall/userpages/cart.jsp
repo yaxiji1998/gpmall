@@ -35,6 +35,9 @@
 <script>
     function getCartList(){
 
+        if(${sessionScope.user==null}){
+            window.location.replace("/gpmall/index.html");
+        }
             $.ajax({
                url:"/gpmall/cart/findCartByUserId.do",
                type:"POST",
@@ -45,7 +48,6 @@
 
     }
     function updateCart(v,cid) {
-        alert(v+"-----"+cid);
         var formData = new FormData();
         formData.append("shoppingNumber",v);
         formData.append("id",cid);

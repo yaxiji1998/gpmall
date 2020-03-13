@@ -42,12 +42,21 @@
         <mvc:interceptor>
             <mvc:mapping path="/cart/**"/>
             <mvc:mapping path="/focus/**"/>
+            <mvc:mapping path="/address/**"/>
+            <mvc:mapping path="/orderDetail/**"/>
+            <mvc:mapping path="/orderBase/**"/>
             <!--<mvc:mapping path="/userpages/cart.jsp"/>
             <mvc:mapping path="/userpages/my-count.jsp"/>
             <mvc:mapping path="/userpages/wishlist.jsp"/>-->
             <!--<mvc:exclude-mapping path="/gpmall/userGood/saveGoodInfoToSession.do"/>-->
             <bean class="cn.edu.ywb.interceptor.LoginInterceptor"></bean>
         </mvc:interceptor>
+        <!--<mvc:interceptor>
+            <mvc:mapping path="/user/login.do"/>
+
+
+            <bean class="cn.edu.ywb.interceptor.InitInterceptor"></bean>
+        </mvc:interceptor>-->
     </mvc:interceptors>
 
 

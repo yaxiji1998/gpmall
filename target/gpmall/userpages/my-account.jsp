@@ -25,11 +25,124 @@
 <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
+<script src="../js/jquery.min.js"></script>
 </head>
 
-<body>
+<body onload="load()">
+<script>
+    function load(){
+        if(${sessionScope.user==null}){
+            window.location.replace("/gpmall/index.html");
+        }
 
+        $.ajax({
+            url:"/gpmall/address/findAddressByUserId.do",
+            type:"POST",
+            success:function (result) {
+                if(result=="true"){
+                    console.log("地址信息加载成功")
+                }
+            }
+        });
+        $.ajax({
+            url:"/gpmall/order/findOrderByUserId.do",
+            type: "POST",
+            success:function (result) {
+                console.log("订单信息加载成功");
+            }
+        });
+
+    }
+
+    function modifyAddress(id) {
+        var addrName = $("#addrName"+id.toString()).val();
+        var phoneNumber = $("#phoneNumber"+id.toString()).val();
+        var addr = $("#addr"+id.toString()).val();
+        var formData = new FormData();
+        formData.append("id",id);
+        formData.append("name",addrName);
+        formData.append("phoneNumber",phoneNumber);
+        formData.append("address",addr);
+        $.ajax({
+            url:"/gpmall/address/modifyAddressById.do",
+            type:"POST",
+            data:formData,
+            processData: false,   // jQuery不要去处理发送的数据
+            contentType: false,
+            success:function (result) {
+                if(result=="true"){
+                    location.replace(location);
+                }else {
+                    alert("修改失败！");
+                }
+            }
+        });
+    }
+
+    function receive(id) {
+        var formData = new FormData();
+        formData.append("id",id);
+        $.ajax({
+            url:"/order/receive.do",
+            type:"POST",
+            data:formData,
+            processData: false,   // jQuery不要去处理发送的数据
+            contentType: false,
+            success:function (result) {
+                if(result=="true"){
+                    location.replace(location);
+                }else {
+                    alert("收货失败！");
+                }
+            }
+        });
+    }
+
+    function modifyUserInfo() {
+        if($("#current-pwd").val()!=${sessionScope.user.password}){
+            alert("当前密码输入错误！");
+        }else if($("#new-pwd").val()!=$("#confirm-pwd").val()){
+            alert("两次密码输入不一致！");
+        }else {
+            //alert("ajax");
+            var formData = new FormData();
+            var uid = ${sessionScope.user.id};
+            var age = $("#age").val();
+            var gender = $("#gender").val();
+            var phoneNumber = $("#phoneNumber").val();
+            var email = $("#email").val();
+            var password = $("#new-pwd").val();
+            formData.append("id",uid);
+            formData.append("age",age);
+            formData.append("gender",gender);
+            formData.append("phoneNumber",phoneNumber);
+            formData.append("email",email);
+            formData.append("password",password);
+            $.ajax({
+                url:"/gpmall/user/modifyUserInfo.do",
+                type:"POST",
+                data:formData,
+                processData: false,   // jQuery不要去处理发送的数据
+                contentType: false,
+                success:function (result) {
+                    location.replace(location);
+                }
+            });
+
+        }
+    }
+
+    function logout() {
+        $.ajax({
+            url:"/gpmall/user/logout.do",
+            type:"GET",
+            success:function () {
+                location.replace("/gpmall/index.html");
+            }
+        });
+    }
+
+</script>
     <!-- Start Header Area -->
     <header class="header-area">
         <!-- main header start -->
@@ -80,7 +193,7 @@
                         <!-- start logo area -->
                         <div class="col-lg-3">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="index.jsp">
                                     <img src="assets/img/logo/logo.png" alt="">
                                 </a>
                             </div>
@@ -94,95 +207,95 @@
                                     <!-- main menu navbar start -->
                                     <nav class="desktop-menu">
                                         <ul>
-                                            <li class="active"><a href="index.html">Home <i class="fa fa-angle-down"></i></a>
+                                            <li class="active"><a href="index.jsp">Home <i class="fa fa-angle-down"></i></a>
                                                 <ul class="dropdown">
-                                                    <li><a href="index.html">Home version 01</a></li>
-                                                    <li><a href="index-2.html">Home version 02</a></li>
+                                                    <li><a href="index.jsp">Home version 01</a></li>
+                                                    <li><a href="index-2.jsp">Home version 02</a></li>
                                                 </ul>
                                             </li>
                                             <li class="static"><a href="#">pages <i class="fa fa-angle-down"></i></a>
                                                 <ul class="megamenu dropdown">
                                                     <li class="mega-title"><a href="#">column 01</a>
                                                         <ul>
-                                                            <li><a href="shop.html">shop grid left
+                                                            <li><a href="shop.jsp">shop grid left
                                                                     sidebar</a></li>
-                                                            <li><a href="shop-grid-right-sidebar.html">shop grid right
+                                                            <li><a href="shop-grid-right-sidebar.jsp">shop grid right
                                                                     sidebar</a></li>
-                                                            <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
-                                                            <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>
+                                                            <li><a href="shop-list-left-sidebar.jsp">shop list left sidebar</a></li>
+                                                            <li><a href="shop-list-right-sidebar.jsp">shop list right sidebar</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="mega-title"><a href="#">column 02</a>
                                                         <ul>
-                                                            <li><a href="product-details.html">product details</a></li>
-                                                            <li><a href="product-details-affiliate.html">product
+                                                            <li><a href="product-details.jsp">product details</a></li>
+                                                            <li><a href="product-details-affiliate.jsp">product
                                                                     details
                                                                     affiliate</a></li>
-                                                            <li><a href="product-details-variable.html">product details
+                                                            <li><a href="product-details-variable.jsp">product details
                                                                     variable</a></li>
-                                                            <li><a href="product-details-group.html">product details
+                                                            <li><a href="product-details-group.jsp">product details
                                                                     group</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="mega-title"><a href="#">column 03</a>
                                                         <ul>
-                                                            <li><a href="cart.html">cart</a></li>
-                                                            <li><a href="checkout.html">checkout</a></li>
-                                                            <li><a href="compare.html">compare</a></li>
-                                                            <li><a href="wishlist.html">wishlist</a></li>
+                                                            <li><a href="cart.jsp">cart</a></li>
+                                                            <li><a href="checkout.jsp">checkout</a></li>
+                                                            <li><a href="compare.jsp">compare</a></li>
+                                                            <li><a href="wishlist.jsp">wishlist</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="mega-title"><a href="#">column 04</a>
                                                         <ul>
-                                                            <li><a href="my-account.html">my-account</a></li>
-                                                            <li><a href="login-register.html">login-register</a></li>
-                                                            <li><a href="contact-us.html">contact us</a></li>
+                                                            <li><a href="my-account.jsp">my-account</a></li>
+                                                            <li><a href="login-register.jsp">login-register</a></li>
+                                                            <li><a href="contact-us.jsp">contact us</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="megamenu-banners d-none d-lg-block">
-                                                        <a href="product-details.html">
+                                                        <a href="product-details.jsp">
                                                             <img src="assets/img/banner/img-bottom-menu.jpg" alt="">
                                                         </a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="shop.html">shop <i class="fa fa-angle-down"></i></a>
+                                            <li><a href="shop.jsp">shop <i class="fa fa-angle-down"></i></a>
                                                 <ul class="dropdown">
                                                     <li><a href="#">shop grid layout <i class="fa fa-angle-right"></i></a>
                                                         <ul class="dropdown">
-                                                            <li><a href="shop.html">shop grid left sidebar</a></li>
-                                                            <li><a href="shop-grid-right-sidebar.html">shop grid right sidebar</a></li>
-                                                            <li><a href="shop-grid-full-3-col.html">shop grid full 3 col</a></li>
-                                                            <li><a href="shop-grid-full-4-col.html">shop grid full 4 col</a></li>
+                                                            <li><a href="shop.jsp">shop grid left sidebar</a></li>
+                                                            <li><a href="shop-grid-right-sidebar.jsp">shop grid right sidebar</a></li>
+                                                            <li><a href="shop-grid-full-3-col.jsp">shop grid full 3 col</a></li>
+                                                            <li><a href="shop-grid-full-4-col.jsp">shop grid full 4 col</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">shop list layout <i class="fa fa-angle-right"></i></a>
                                                         <ul class="dropdown">
-                                                            <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
-                                                            <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>
-                                                            <li><a href="shop-list-full-width.html">shop list full width</a></li>
+                                                            <li><a href="shop-list-left-sidebar.jsp">shop list left sidebar</a></li>
+                                                            <li><a href="shop-list-right-sidebar.jsp">shop list right sidebar</a></li>
+                                                            <li><a href="shop-list-full-width.jsp">shop list full width</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">products details <i class="fa fa-angle-right"></i></a>
                                                         <ul class="dropdown">
-                                                            <li><a href="product-details.html">product details</a></li>
-                                                            <li><a href="product-details-affiliate.html">product details affiliate</a></li>
-                                                            <li><a href="product-details-variable.html">product details variable</a></li>
-                                                            <li><a href="product-details-group.html">product details group</a></li>
+                                                            <li><a href="product-details.jsp">product details</a></li>
+                                                            <li><a href="product-details-affiliate.jsp">product details affiliate</a></li>
+                                                            <li><a href="product-details-variable.jsp">product details variable</a></li>
+                                                            <li><a href="product-details-group.jsp">product details group</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="blog-left-sidebar.html">Blog <i class="fa fa-angle-down"></i></a>
+                                            <li><a href="blog-left-sidebar.jsp">Blog <i class="fa fa-angle-down"></i></a>
                                                 <ul class="dropdown">
-                                                    <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-                                                    <li><a href="blog-right-sidebar.html">blog right sidebar</a></li>
-                                                    <li><a href="blog-grid-full-width.html">blog grid no sidebar</a></li>
-                                                    <li><a href="blog-details.html">blog details</a></li>
-                                                    <li><a href="blog-details-left-sidebar.html">blog details left sidebar</a></li>
+                                                    <li><a href="blog-left-sidebar.jsp">blog left sidebar</a></li>
+                                                    <li><a href="blog-right-sidebar.jsp">blog right sidebar</a></li>
+                                                    <li><a href="blog-grid-full-width.jsp">blog grid no sidebar</a></li>
+                                                    <li><a href="blog-details.jsp">blog details</a></li>
+                                                    <li><a href="blog-details-left-sidebar.jsp">blog details left sidebar</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact-us.html">Contact us</a></li>
+                                            <li><a href="contact-us.jsp">Contact us</a></li>
                                         </ul>
                                     </nav>
                                     <!-- main menu navbar end -->
@@ -206,13 +319,13 @@
                                                 <i class="lnr lnr-user"></i>
                                             </a>
                                             <ul class="dropdown-list">
-                                                <li><a href="login-register.html">login</a></li>
-                                                <li><a href="login-register.html">register</a></li>
-                                                <li><a href="my-account.html">my account</a></li>
+                                                <li><a href="login-register.jsp">login</a></li>
+                                                <li><a href="login-register.jsp">register</a></li>
+                                                <li><a href="my-account.jsp">my account</a></li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="wishlist.html">
+                                            <a href="wishlist.jsp">
                                                 <i class="lnr lnr-heart"></i>
                                                 <div class="notification">0</div>
                                             </a>
@@ -244,13 +357,13 @@
                     <div class="col-12">
                         <div class="mobile-main-header">
                             <div class="mobile-logo">
-                                <a href="index.html">
+                                <a href="index.jsp">
                                     <img src="assets/img/logo/logo.png" alt="Brand Logo">
                                 </a>
                             </div>
                             <div class="mobile-menu-toggler">
                                 <div class="mini-cart-wrap">
-                                    <a href="cart.html">
+                                    <a href="cart.jsp">
                                         <i class="lnr lnr-cart"></i>
                                     </a>
                                 </div>
@@ -294,49 +407,49 @@
                     <!-- mobile menu navigation start -->
                     <nav>
                         <ul class="mobile-menu">
-                            <li class="menu-item-has-children"><a href="index.html">Home</a>
+                            <li class="menu-item-has-children"><a href="index.jsp">Home</a>
                                 <ul class="dropdown">
-                                    <li><a href="index.html">Home version 01</a></li>
-                                    <li><a href="index-2.html">Home version 02</a></li>
+                                    <li><a href="index.jsp">Home version 01</a></li>
+                                    <li><a href="index-2.jsp">Home version 02</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children"><a href="#">pages</a>
                                 <ul class="megamenu dropdown">
                                     <li class="mega-title menu-item-has-children"><a href="#">column 01</a>
                                         <ul class="dropdown">
-                                            <li><a href="shop.html">shop grid left
+                                            <li><a href="shop.jsp">shop grid left
                                                     sidebar</a></li>
-                                            <li><a href="shop-grid-right-sidebar.html">shop grid right
+                                            <li><a href="shop-grid-right-sidebar.jsp">shop grid right
                                                     sidebar</a></li>
-                                            <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
-                                            <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>
+                                            <li><a href="shop-list-left-sidebar.jsp">shop list left sidebar</a></li>
+                                            <li><a href="shop-list-right-sidebar.jsp">shop list right sidebar</a></li>
                                         </ul>
                                     </li>
                                     <li class="mega-title menu-item-has-children"><a href="#">column 02</a>
                                         <ul class="dropdown">
-                                            <li><a href="product-details.html">product details</a></li>
-                                            <li><a href="product-details-affiliate.html">product
+                                            <li><a href="product-details.jsp">product details</a></li>
+                                            <li><a href="product-details-affiliate.jsp">product
                                                     details
                                                     affiliate</a></li>
-                                            <li><a href="product-details-variable.html">product details
+                                            <li><a href="product-details-variable.jsp">product details
                                                     variable</a></li>
-                                            <li><a href="product-details-group.html">product details
+                                            <li><a href="product-details-group.jsp">product details
                                                     group</a></li>
                                         </ul>
                                     </li>
                                     <li class="mega-title menu-item-has-children"><a href="#">column 03</a>
                                         <ul class="dropdown">
-                                            <li><a href="cart.html">cart</a></li>
-                                            <li><a href="checkout.html">checkout</a></li>
-                                            <li><a href="compare.html">compare</a></li>
-                                            <li><a href="wishlist.html">wishlist</a></li>
+                                            <li><a href="cart.jsp">cart</a></li>
+                                            <li><a href="checkout.jsp">checkout</a></li>
+                                            <li><a href="compare.jsp">compare</a></li>
+                                            <li><a href="wishlist.jsp">wishlist</a></li>
                                         </ul>
                                     </li>
                                     <li class="mega-title menu-item-has-children"><a href="#">column 04</a>
                                         <ul class="dropdown">
-                                            <li><a href="my-account.html">my-account</a></li>
-                                            <li><a href="login-register.html">login-register</a></li>
-                                            <li><a href="contact-us.html">contact us</a></li>
+                                            <li><a href="my-account.jsp">my-account</a></li>
+                                            <li><a href="login-register.jsp">login-register</a></li>
+                                            <li><a href="contact-us.jsp">contact us</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -345,39 +458,39 @@
                                 <ul class="dropdown">
                                     <li class="menu-item-has-children"><a href="#">shop grid layout</a>
                                         <ul class="dropdown">
-                                            <li><a href="shop.html">shop grid left sidebar</a></li>
-                                            <li><a href="shop-grid-right-sidebar.html">shop grid right sidebar</a></li>
-                                            <li><a href="shop-grid-full-3-col.html">shop grid full 3 col</a></li>
-                                            <li><a href="shop-grid-full-4-col.html">shop grid full 4 col</a></li>
+                                            <li><a href="shop.jsp">shop grid left sidebar</a></li>
+                                            <li><a href="shop-grid-right-sidebar.jsp">shop grid right sidebar</a></li>
+                                            <li><a href="shop-grid-full-3-col.jsp">shop grid full 3 col</a></li>
+                                            <li><a href="shop-grid-full-4-col.jsp">shop grid full 4 col</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children"><a href="#">shop list layout</a>
                                         <ul class="dropdown">
-                                            <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
-                                            <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>
-                                            <li><a href="shop-list-full-width.html">shop list full width</a></li>
+                                            <li><a href="shop-list-left-sidebar.jsp">shop list left sidebar</a></li>
+                                            <li><a href="shop-list-right-sidebar.jsp">shop list right sidebar</a></li>
+                                            <li><a href="shop-list-full-width.jsp">shop list full width</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children"><a href="#">products details</a>
                                         <ul class="dropdown">
-                                            <li><a href="product-details.html">product details</a></li>
-                                            <li><a href="product-details-affiliate.html">product details affiliate</a></li>
-                                            <li><a href="product-details-variable.html">product details variable</a></li>
-                                            <li><a href="product-details-group.html">product details group</a></li>
+                                            <li><a href="product-details.jsp">product details</a></li>
+                                            <li><a href="product-details-affiliate.jsp">product details affiliate</a></li>
+                                            <li><a href="product-details-variable.jsp">product details variable</a></li>
+                                            <li><a href="product-details-group.jsp">product details group</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children "><a href="#">Blog</a>
                                 <ul class="dropdown">
-                                    <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-                                    <li><a href="blog-right-sidebar.html">blog right sidebar</a></li>
-                                    <li><a href="blog-grid-full-width.html">blog grid no sidebar</a></li>
-                                    <li><a href="blog-details.html">blog details</a></li>
-                                    <li><a href="blog-details-left-sidebar.html">blog details left sidebar</a></li>
+                                    <li><a href="blog-left-sidebar.jsp">blog left sidebar</a></li>
+                                    <li><a href="blog-right-sidebar.jsp">blog right sidebar</a></li>
+                                    <li><a href="blog-grid-full-width.jsp">blog grid no sidebar</a></li>
+                                    <li><a href="blog-details.jsp">blog details</a></li>
+                                    <li><a href="blog-details-left-sidebar.jsp">blog details left sidebar</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact-us.html">Contact us</a></li>
+                            <li><a href="contact-us.jsp">Contact us</a></li>
                         </ul>
                     </nav>
                     <!-- mobile menu navigation end -->
@@ -405,9 +518,9 @@
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="myaccount">
-                                    <a class="dropdown-item" href="my-account.html">my account</a>
-                                    <a class="dropdown-item" href="login-register.html"> login</a>
-                                    <a class="dropdown-item" href="login-register.html">register</a>
+                                    <a class="dropdown-item" href="my-account.jsp">my account</a>
+                                    <a class="dropdown-item" href="login-register.jsp"> login</a>
+                                    <a class="dropdown-item" href="login-register.jsp">register</a>
                                 </div>
                             </div>
                         </li>
@@ -453,7 +566,7 @@
                             <nav aria-label="breadcrumb">
                                 <h1>my account</h1>
                                 <ul class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="index.jsp"><i class="fa fa-home"></i></a></li>
                                     <li class="breadcrumb-item active" aria-current="page">my account</li>
                                 </ul>
                             </nav>
@@ -477,19 +590,18 @@
                                     <div class="col-lg-3 col-md-4">
                                         <div class="myaccount-tab-menu nav" role="tablist">
                                             <a href="#dashboad" class="active" data-toggle="tab"><i class="fa fa-dashboard"></i>
-                                                Dashboard</a>
+                                                我的</a>
                                             <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i>
-                                                Orders</a>
-                                            <a href="#download" data-toggle="tab"><i class="fa fa-cloud-download"></i>
-                                                Download</a>
-                                            <a href="#payment-method" data-toggle="tab"><i class="fa fa-credit-card"></i>
+                                                订单</a>
+                                            <%--<a href="#download" data-toggle="tab"><i class="fa fa-cloud-download"></i>
+                                                Download</a>--%>
+                                            <%--<a href="#payment-method" data-toggle="tab"><i class="fa fa-credit-card"></i>
                                                 Payment
-                                                Method</a>
+                                                Method</a>--%>
                                             <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i>
-                                                address</a>
-                                            <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> Account
-                                                Details</a>
-                                            <a href="login-register.html"><i class="fa fa-sign-out"></i> Logout</a>
+                                                地址</a>
+                                            <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> 详细信息</a>
+                                            <a onclick="logout()"><i class="fa fa-sign-out"></i> 退出</a>
                                         </div>
                                     </div>
                                     <!-- My Account Tab Menu End -->
@@ -500,14 +612,11 @@
                                             <!-- Single Tab Content Start -->
                                             <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
                                                 <div class="myaccount-content">
-                                                    <h3>Dashboard</h3>
+                                                    <h3>我的</h3>
                                                     <div class="welcome">
-                                                        <p>Hello, <strong>Erik Jhonson</strong> (If Not <strong>Jhonson
-                                                            !</strong><a href="login-register.html" class="logout"> Logout</a>)</p>
+                                                        <p>你好, <strong>${sessionScope.user.name}</strong> </p>
                                                     </div>
-                                                    <p class="mb-0">From your account dashboard. you can easily check &
-                                                        view your recent orders, manage your shipping and billing addresses
-                                                        and edit your password and account details.</p>
+                                                    <p class="mb-0">你可以在这里很容易的检查，浏览你最近的订单，管理你的收货地址，以及修改密码和其他信息</p>
                                                 </div>
                                             </div>
                                             <!-- Single Tab Content End -->
@@ -515,43 +624,35 @@
                                             <!-- Single Tab Content Start -->
                                             <div class="tab-pane fade" id="orders" role="tabpanel">
                                                 <div class="myaccount-content">
-                                                    <h3>Orders</h3>
+                                                    <h3>订单</h3>
                                                     <div class="myaccount-table table-responsive text-center">
                                                         <table class="table table-bordered">
                                                             <thead class="thead-light">
                                                                 <tr>
-                                                                    <th>Order</th>
-                                                                    <th>Date</th>
-                                                                    <th>Status</th>
-                                                                    <th>Total</th>
-                                                                    <th>Action</th>
+                                                                    <th>订单编号</th>
+                                                                    <th>日期</th>
+                                                                    <th>商品名称</th>
+                                                                    <th>订单状态</th>
+                                                                    <th>总价</th>
+                                                                    <th>操作</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                            <c:if test="${sessionScope.orderList==null}">
+                                                                <h3>您还没有订单哦，赶快去购物吧!</h3>
+                                                            </c:if>
+                                                            <c:forEach items="${orderList}" var="order">
                                                                 <tr>
-                                                                    <td>1</td>
-                                                                    <td>Aug 22, 2019</td>
-                                                                    <td>Pending</td>
-                                                                    <td>$3000</td>
-                                                                    <td><a href="cart.html" class="btn btn__bg">View</a>
+                                                                    <td>${order.id}</td>
+                                                                    <td>${order.orderDate}</td>
+                                                                    <td>${order.good.gname}</td>
+                                                                    <td>${order.statusString}</td>
+                                                                    <td>${order.amount}</td>
+                                                                    <td><button class="btn btn__bg" onclick="receive(${order.id})">确认收货</button>
                                                                     </td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td>2</td>
-                                                                    <td>July 22, 2019</td>
-                                                                    <td>Approved</td>
-                                                                    <td>$200</td>
-                                                                    <td><a href="cart.html" class="btn btn__bg">View</a>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>3</td>
-                                                                    <td>June 12, 2019</td>
-                                                                    <td>On Hold</td>
-                                                                    <td>$990</td>
-                                                                    <td><a href="cart.html" class="btn btn__bg">View</a>
-                                                                    </td>
-                                                                </tr>
+                                                            </c:forEach>
+
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -609,15 +710,32 @@
                                             <!-- Single Tab Content Start -->
                                             <div class="tab-pane fade" id="address-edit" role="tabpanel">
                                                 <div class="myaccount-content">
-                                                    <h3>Billing Address</h3>
-                                                    <address>
-                                                        <p><strong>Erik Jhonson</strong></p>
-                                                        <p>1355 Market St, Suite 900 <br>
-                                                            San Francisco, CA 94103</p>
-                                                            <p>Mobile: (123) 456-7890</p>
-                                                    </address>
-                                                    <a href="#" class="btn btn__bg"><i class="fa fa-edit"></i>
-                                                        Edit Address</a>
+                                                    <h3>地址</h3>
+                                                    <div class="myaccount-table table-responsive text-center">
+                                                        <table class="table table-bordered">
+                                                            <thead class="thead-light">
+                                                            <tr>
+                                                                <th>收货人姓名</th>
+                                                                <th>手机号</th>
+                                                                <th>地址</th>
+                                                                <th>操作</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <c:forEach items="${sessionScope.addressList}" var="address">
+                                                                <tr>
+                                                                    <td><input type="text" value="${address.name}" id="addrName${address.id}"></td>
+                                                                    <td><input type="text" value="${address.phoneNumber}" id="phoneNumber${address.id}"></td>
+                                                                    <td><input type="text" value="${address.address}" id="addr${address.id}"></td>
+                                                                    <td><button class="btn btn__bg" onclick="modifyAddress(${address.id})">确认修改</button>
+                                                                    </td>
+                                                                </tr>
+                                                            </c:forEach>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <!-- Single Tab Content End -->
@@ -625,61 +743,56 @@
                                             <!-- Single Tab Content Start -->
                                             <div class="tab-pane fade" id="account-info" role="tabpanel">
                                                 <div class="myaccount-content">
-                                                    <h3>Account Details</h3>
+                                                    <h3>详细信息</h3>
                                                     <div class="account-details-form">
-                                                        <form action="#">
+
                                                             <div class="row">
                                                                 <div class="col-lg-6">
                                                                     <div class="single-input-item">
-                                                                        <label for="first-name" class="required">First
-                                                                            Name</label>
-                                                                        <input type="text" id="first-name" placeholder="First Name" />
+                                                                        <label for="gender" class="required">性别</label>
+                                                                        <input type="text" id="gender" value="${sessionScope.user.gender}" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6">
                                                                     <div class="single-input-item">
-                                                                        <label for="last-name" class="required">Last
-                                                                            Name</label>
-                                                                        <input type="text" id="last-name" placeholder="Last Name" />
+                                                                        <label for="age" class="required">年龄</label>
+                                                                        <input type="text" id="age" value="${sessionScope.user.age}" />
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="single-input-item">
-                                                                <label for="display-name" class="required">Display Name</label>
-                                                                <input type="text" id="display-name" placeholder="Display Name" />
+                                                                <label for="phoneNumber" class="required">手机号</label>
+                                                                <input type="text" id="phoneNumber" value="${sessionScope.user.phoneNumber}" />
                                                             </div>
                                                             <div class="single-input-item">
-                                                                <label for="email" class="required">Email Addres</label>
-                                                                <input type="email" id="email" placeholder="Email Address" />
+                                                                <label for="email" class="required">邮箱</label>
+                                                                <input type="email" id="email" value="${sessionScope.user.email}" />
                                                             </div>
                                                             <fieldset>
-                                                                <legend>Password change</legend>
+                                                                <legend>修改密码</legend>
                                                                 <div class="single-input-item">
-                                                                    <label for="current-pwd" class="required">Current
-                                                                        Password</label>
-                                                                    <input type="password" id="current-pwd" placeholder="Current Password" />
+                                                                    <label for="current-pwd" class="required">当前密码</label>
+                                                                    <input type="password" id="current-pwd" placeholder="当前密码" />
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-lg-6">
                                                                         <div class="single-input-item">
-                                                                            <label for="new-pwd" class="required">New
-                                                                                Password</label>
-                                                                            <input type="password" id="new-pwd" placeholder="New Password" />
+                                                                            <label for="new-pwd" class="required">新密码</label>
+                                                                            <input type="password" id="new-pwd" placeholder="新密码" />
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6">
                                                                         <div class="single-input-item">
-                                                                            <label for="confirm-pwd" class="required">Confirm
-                                                                                Password</label>
-                                                                            <input type="password" id="confirm-pwd" placeholder="Confirm Password" />
+                                                                            <label for="confirm-pwd" class="required">确认密码</label>
+                                                                            <input type="password" id="confirm-pwd" placeholder="确认密码" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </fieldset>
                                                             <div class="single-input-item">
-                                                                <button class="btn btn__bg">Save Changes</button>
+                                                                <button class="btn btn__bg" onclick="modifyUserInfo()">保存修改</button>
                                                             </div>
-                                                        </form>
+
                                                     </div>
                                                 </div>
                                             </div> <!-- Single Tab Content End -->
@@ -940,13 +1053,13 @@
                         <ul>
                             <li class="minicart-item">
                                 <div class="minicart-thumb">
-                                    <a href="product-details.html">
+                                    <a href="product-details.jsp">
                                         <img src="assets/img/cart/cart-1.jpg" alt="product">
                                     </a>
                                 </div>
                                 <div class="minicart-content">
                                     <h3 class="product-name">
-                                        <a href="product-details.html">Flowers bouquet pink for all flower lovers</a>
+                                        <a href="product-details.jsp">Flowers bouquet pink for all flower lovers</a>
                                     </h3>
                                     <p>
                                         <span class="cart-quantity">1 <strong>&times;</strong></span>
@@ -957,13 +1070,13 @@
                             </li>
                             <li class="minicart-item">
                                 <div class="minicart-thumb">
-                                    <a href="product-details.html">
+                                    <a href="product-details.jsp">
                                         <img src="assets/img/cart/cart-2.jpg" alt="product">
                                     </a>
                                 </div>
                                 <div class="minicart-content">
                                     <h3 class="product-name">
-                                        <a href="product-details.html">Jasmine flowers white for all flower lovers</a>
+                                        <a href="product-details.jsp">Jasmine flowers white for all flower lovers</a>
                                     </h3>
                                     <p>
                                         <span class="cart-quantity">1 <strong>&times;</strong></span>
@@ -997,8 +1110,8 @@
                     </div>
 
                     <div class="minicart-button">
-                        <a href="cart.html"><i class="fa fa-shopping-cart"></i> view cart</a>
-                        <a href="cart.html"><i class="fa fa-share"></i> checkout</a>
+                        <a href="cart.jsp"><i class="fa fa-shopping-cart"></i> view cart</a>
+                        <a href="cart.jsp"><i class="fa fa-share"></i> checkout</a>
                     </div>
                 </div>
             </div>

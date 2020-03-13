@@ -5,23 +5,50 @@
 <meta charset="utf-8">
 <title>左右过度切换的登录注册页面演示</title>
 <link rel="stylesheet" href="css/userLoginStyle.css">
+<script src="js/jquery.min.js"></script>
 </head>
 
 <body>
+
+<script>
+    function login() {
+        var formData = new FormData();
+        var username = $("#loginUsername").val();
+        var passowrd = $("#loginPassword").val();
+        formData.append("username",username);
+        formData.append("password",passowrd);
+        $.ajax({
+            url:"/gpmall/user/login.do",
+            type:"POST",
+            data:formData,
+            processData: false,   // jQuery不要去处理发送的数据
+            contentType: false,
+            success:function (result) {
+                if(result=="false"){
+                    alert("用户名或密码错误!");
+                }else {
+                    location.replace("/gpmall/userpages/index.jsp");
+                }
+            }
+        });
+    }
+</script>
+
+
     <div class="content">
-        <form action="/gpmall/user/login.do" method="post">
+        <form >
         <div class="form sign-in">
             <h2>欢迎回来</h2>
             <label>
                 <span>用户名</span>
-                <input type="text" name="username" />
+                <input type="text" name="username" id="loginUsername" />
             </label>
             <label>
                 <span>密码</span>
-                <input type="password" name="password" />
+                <input type="password" name="password" id="loginPassword" />
             </label>
             <p class="forgot-pass"><a href="javascript:">忘记密码？</a></p>
-            <button type="submit" class="submit">登 录</button>
+            <button type="button" class="submit" onclick="login()">登 录</button>
 
         </div>
         </form>
