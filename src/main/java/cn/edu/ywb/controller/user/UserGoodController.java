@@ -25,6 +25,7 @@ public class UserGoodController {
     public String saveGoodInfoToSession(HttpServletRequest request){
         List<Good> allGood = goodService.findAllGood();
         List<GoodsType> allType = goodTypeService.findAllGoodType();
+        System.out.println(allType.get(0));
         request.getSession().setAttribute("allGood",allGood);
         request.getSession().setAttribute("allType",allType);
         return "true";

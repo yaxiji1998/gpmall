@@ -79,46 +79,16 @@
                 </el-header>
 
                 <el-main>
-                    <el-table :data="tableData" style="width: 100%" max-height="100%">
-                        <el-table-column fixed prop="date" label="日期" width="150">
-                        </el-table-column>
-                        <el-table-column prop="name" label="姓名" width="120">
-                        </el-table-column>
-                        <el-table-column prop="province" label="省份" width="120">
-                        </el-table-column>
-                        <el-table-column prop="city" label="市区" width="120">
-                        </el-table-column>
-                        <el-table-column prop="address" label="地址" width="300">
-                        </el-table-column>
-                        <el-table-column prop="zip" label="邮编" width="120">
-                        </el-table-column>
-                        <el-table-column fixed="right" label="操作" width="120">
-                            <template slot-scope="scope" style="text-align: left">
-                                <el-button @click.native.prevent="deleteRow(scope.$index, tableData)"  type="text"
-                                    size="small">
-                                    移除
-                                </el-button>
-                                <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text"
-                                    size="small">
-                                </el-button>
-                                <el-button @click.native.prevent="update(scope.$index, tableData)" type="text"
-                                    size="small">
-                                    修改
-                                </el-button>
-                                <el-button @click.native.prevent="add(scope.$index, tableData)" type="text"
-                                    size="small">
-                                    添加
-                                </el-button>
-                            </template>
-                        </el-table-column>
-                        
-                    </el-table>
+
+                    <form method="post" action="/gpmall/type/addType.do" >
+                        类型名称：<input type="text" name="typeName"><br/>
+
+                        <input type="submit" value="提交">
+
+                    </form>
                 </el-main>
                 <el-steps :active="0" align-center>
-                        <el-step title="步骤1" description="将左侧导航的字段换成你需要的字段"></el-step>
-                        <el-step title="步骤2" description="将中间表头换成你需要的表头"></el-step>
-                        <el-step title="步骤3" description="将表格内的信息换成你所需要的信息"></el-step>
-                        <el-step title="步骤4" description="增加操作"></el-step>
+
                       </el-steps>
             </el-container>
            

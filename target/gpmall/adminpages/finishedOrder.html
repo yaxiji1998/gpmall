@@ -80,45 +80,36 @@
 
                 <el-main>
                     <el-table :data="tableData" style="width: 100%" max-height="100%">
-                        <el-table-column fixed prop="date" label="日期" width="150">
+                        <el-table-column fixed prop="id" label="编号" width="150">
                         </el-table-column>
-                        <el-table-column prop="name" label="姓名" width="120">
+                        <el-table-column prop="user.name" label="用户姓名" width="120">
                         </el-table-column>
-                        <el-table-column prop="province" label="省份" width="120">
+                        <el-table-column prop="address.address" label="地址" width="120">
                         </el-table-column>
-                        <el-table-column prop="city" label="市区" width="120">
+                        <el-table-column prop="good.gname" label="商品名称" width="120">
                         </el-table-column>
-                        <el-table-column prop="address" label="地址" width="300">
+                        <el-table-column prop="amount" label="价钱" width="150">
                         </el-table-column>
-                        <el-table-column prop="zip" label="邮编" width="120">
+                        <el-table-column prop="shoppingNumber" label="数量" width="150">
+                        </el-table-column>
+                        <el-table-column prop="orderDate" label="下单日期" width="120">
+                        </el-table-column>
+                        <el-table-column prop="statusString" label="订单状态" width="120">
                         </el-table-column>
                         <el-table-column fixed="right" label="操作" width="120">
                             <template slot-scope="scope" style="text-align: left">
                                 <el-button @click.native.prevent="deleteRow(scope.$index, tableData)"  type="text"
-                                    size="small">
-                                    移除
+                                           size="small">
+
                                 </el-button>
-                                <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text"
-                                    size="small">
-                                </el-button>
-                                <el-button @click.native.prevent="update(scope.$index, tableData)" type="text"
-                                    size="small">
-                                    修改
-                                </el-button>
-                                <el-button @click.native.prevent="add(scope.$index, tableData)" type="text"
-                                    size="small">
-                                    添加
-                                </el-button>
+
                             </template>
                         </el-table-column>
-                        
+
                     </el-table>
                 </el-main>
                 <el-steps :active="0" align-center>
-                        <el-step title="步骤1" description="将左侧导航的字段换成你需要的字段"></el-step>
-                        <el-step title="步骤2" description="将中间表头换成你需要的表头"></el-step>
-                        <el-step title="步骤3" description="将表格内的信息换成你所需要的信息"></el-step>
-                        <el-step title="步骤4" description="增加操作"></el-step>
+
                       </el-steps>
             </el-container>
            
@@ -128,6 +119,7 @@
     </div>
     <script src="js/vue.js"></script>
     <script src="js/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         let vm = new Vue({
             el: '#app',
@@ -143,66 +135,42 @@
                         }
                     },
                     active: 0,
-                    tableData: [{
-                        date: '2016-05-03',
-                        name: '王小虎',
-                        province: '上海',
-                        city: '普陀区',
-                        address: '上海市普陀区金沙江路 1518 弄',
-                        zip: 200333
-                    }, {
-                        date: '2016-05-02',
-                        name: '王小虎',
-                        province: '上海',
-                        city: '普陀区',
-                        address: '上海市普陀区金沙江路 1518 弄',
-                        zip: 200333
-                    }, {
-                        date: '2016-05-04',
-                        name: '王小虎',
-                        province: '上海',
-                        city: '普陀区',
-                        address: '上海市普陀区金沙江路 1518 弄',
-                        zip: 200333
-                    }, {
-                        date: '2016-05-01',
-                        name: '王小虎',
-                        province: '上海',
-                        city: '普陀区',
-                        address: '上海市普陀区金沙江路 1518 弄',
-                        zip: 200333
-                    }, {
-                        date: '2016-05-08',
-                        name: '王小虎',
-                        province: '上海',
-                        city: '普陀区',
-                        address: '上海市普陀区金沙江路 1518 弄',
-                        zip: 200333
-                    }, {
-                        date: '2016-05-06',
-                        name: '王小虎',
-                        province: '上海',
-                        city: '普陀区',
-                        address: '上海市普陀区金沙江路 1518 弄',
-                        zip: 200333
-                    }, {
-                        date: '2016-05-07',
-                        name: '王小虎',
-                        province: '上海',
-                        city: '普陀区',
-                        address: '上海市普陀区金沙江路 1518 弄',
-                        zip: 200333
-                    }]
+                    tableData: []
                 }
+            },
+            mounted(){
+                this.init();
             },
             methods: {
                 deleteRow(index, rows) {
-                    rows.splice(index, 1);
+                    let param = new URLSearchParams();
+                    param.append('id',rows[index].id);
+                    axios.post("/gpmall/order/changeStatusById/2.do",param).then(function (response) {
+                        let result = response.data.result;
+                        alert(result);
+                        if(result=='true'){
+                            vm.init();
+                        }else {
+                            alert("发货失败！");
+                        }
+                    }).catch(function (error) {
+                        console.log(error)
+                    })
+                    //rows.splice(index, 1);
                 },
                 update(){},
                 add(){},
                 next() {
                     if (this.active++ > 2) this.active = 0;
+                },
+                init:function () {
+                    axios.post("/gpmall/order/findOrderByStatus/3.do").then(function (response) {
+                        var jsonObj = JSON.parse(JSON.stringify(response.data));
+                        vm.tableData = jsonObj;
+                        console.log(vm.tableData[0].gname)
+                    }).catch(function (error) {
+                        console.log(error)
+                    })
                 }
             },
 

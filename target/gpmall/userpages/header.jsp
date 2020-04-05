@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <header class="header-area">
     <!-- main header start -->
     <div class="main-header d-none d-lg-block">
@@ -71,47 +72,45 @@
                                     <ul>
                                         <li class="active"><a href="index.jsp">主页 <i class="fa fa-angle-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="index.jsp">Home version 01</a></li>
-                                                <li><a href="index-2.jsp">Home version 02</a></li>
+                                                <li><a href="index.jsp">主页</a></li>
                                             </ul>
                                         </li>
                                         <li class="static"><a href="#">页面 <i class="fa fa-angle-down"></i></a>
                                             <ul class="megamenu dropdown">
                                                 <li class="mega-title"><a href="#">column 01</a>
                                                     <ul>
-                                                        <li><a href="shop.jsp">shop grid left
-                                                            sidebar</a></li>
-                                                        <li><a href="shop-grid-right-sidebar.jsp">shop grid right
+                                                        <li><a href="shop.jsp">购物</a></li>
+                                                        <%--<li><a href="shop-grid-right-sidebar.jsp">shop grid right
                                                             sidebar</a></li>
                                                         <li><a href="shop-list-left-sidebar.jsp">shop list left sidebar</a></li>
-                                                        <li><a href="shop-list-right-sidebar.jsp">shop list right sidebar</a></li>
+                                                        <li><a href="shop-list-right-sidebar.jsp">shop list right sidebar</a></li>--%>
                                                     </ul>
                                                 </li>
                                                 <li class="mega-title"><a href="#">column 02</a>
                                                     <ul>
-                                                        <li><a href="product-details.jsp">product details</a></li>
-                                                        <li><a href="product-details-affiliate.jsp">product
+                                                        <li><a href="product-details.jsp">商品详情页</a></li>
+                                                       <%-- <li><a href="product-details-affiliate.jsp">product
                                                             details
                                                             affiliate</a></li>
                                                         <li><a href="product-details-variable.jsp">product details
                                                             variable</a></li>
                                                         <li><a href="product-details-group.jsp">product details
-                                                            group</a></li>
+                                                            group</a></li>--%>
                                                     </ul>
                                                 </li>
                                                 <li class="mega-title"><a href="#">column 03</a>
                                                     <ul>
-                                                        <li><a href="cart.jsp">cart</a></li>
-                                                        <li><a href="checkout.jsp">checkout</a></li>
-                                                        <li><a href="compare.jsp">compare</a></li>
-                                                        <li><a href="wishlist.jsp">wishlist</a></li>
+                                                        <li><a href="cart.jsp">购物车</a></li>
+                                                        <%--<li><a href="checkout.jsp">checkout</a></li>
+                                                        <li><a href="compare.jsp">compare</a></li>--%>
+                                                        <li><a href="wishlist.jsp">愿望清单</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="mega-title"><a href="#">column 04</a>
                                                     <ul>
-                                                        <li><a href="my-account.jsp">my-account</a></li>
-                                                        <li><a href="login-register.jsp">login-register</a></li>
-                                                        <li><a href="contact-us.jsp">contact us</a></li>
+                                                        <li><a href="my-account.jsp">我的</a></li>
+                                                        <%--<li><a href="login-register.jsp">login-register</a></li>
+                                                        <li><a href="contact-us.jsp">contact us</a></li>--%>
                                                     </ul>
                                                 </li>
                                                 <li class="megamenu-banners d-none d-lg-block">
@@ -123,15 +122,15 @@
                                         </li>
                                         <li><a href="shop.jsp">购物 <i class="fa fa-angle-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="#">shop grid layout <i class="fa fa-angle-right"></i></a>
-                                                    <ul class="dropdown">
+                                                <li><a href="shop.jsp">浏览商品<i class="fa fa-angle-right"></i></a>
+                                                    <%--<ul class="dropdown">
                                                         <li><a href="shop.jsp">shop grid left sidebar</a></li>
                                                         <li><a href="shop-grid-right-sidebar.jsp">shop grid right sidebar</a></li>
                                                         <li><a href="shop-grid-full-3-col.jsp">shop grid full 3 col</a></li>
                                                         <li><a href="shop-grid-full-4-col.jsp">shop grid full 4 col</a></li>
-                                                    </ul>
+                                                    </ul>--%>
                                                 </li>
-                                                <li><a href="#">shop list layout <i class="fa fa-angle-right"></i></a>
+                                                <%--<li><a href="#">shop list layout <i class="fa fa-angle-right"></i></a>
                                                     <ul class="dropdown">
                                                         <li><a href="shop-list-left-sidebar.jsp">shop list left sidebar</a></li>
                                                         <li><a href="shop-list-right-sidebar.jsp">shop list right sidebar</a></li>
@@ -145,17 +144,17 @@
                                                         <li><a href="product-details-variable.jsp">product details variable</a></li>
                                                         <li><a href="product-details-group.jsp">product details group</a></li>
                                                     </ul>
-                                                </li>
+                                                </li>--%>
                                             </ul>
                                         </li>
-                                        <li><a href="blog-left-sidebar.jsp">Blog <i class="fa fa-angle-down"></i></a>
-                                            <ul class="dropdown">
+                                        <%--<li><p >Blog <i class="fa fa-angle-down"></i></p>--%>
+                                            <%--<ul class="dropdown">
                                                 <li><a href="blog-left-sidebar.jsp">blog left sidebar</a></li>
                                                 <li><a href="blog-right-sidebar.jsp">blog right sidebar</a></li>
                                                 <li><a href="blog-grid-full-width.jsp">blog grid no sidebar</a></li>
                                                 <li><a href="blog-details.jsp">blog details</a></li>
                                                 <li><a href="blog-details-left-sidebar.jsp">blog details left sidebar</a></li>
-                                            </ul>
+                                            </ul>--%>
                                         </li>
                                         <li><a href="contact-us.jsp">联系我们</a></li>
                                     </ul>
@@ -181,21 +180,24 @@
                                             <i class="lnr lnr-user"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li><a href="../index.jsp">login</a></li>
-                                            <li><a href="../index.jsp">register</a></li>
+                                            <li><a href="../index.html">login</a></li>
+                                            <li><a href="../index.html">register</a></li>
                                             <li><a href="my-account.jsp">my account</a></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="wishlist.jsp">
                                             <i class="lnr lnr-heart"></i>
-                                            <div class="notification">0</div>
+                                            <c:if test="${sessionScope.user!=null}">
+                                            <%--<div class="notification"></div>--%>
+
+                                            </c:if>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="minicart-btn">
+                                        <a href="cart.jsp" ><%--class="minicart-btn"--%>
                                             <i class="lnr lnr-cart"></i>
-                                            <div class="notification">2</div>
+                                            <%--<div class="notification"></div>--%>
                                         </a>
                                     </li>
                                 </ul>

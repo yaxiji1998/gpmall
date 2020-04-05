@@ -8,4 +8,10 @@ public interface IOrderService {
     List<Order> findOrderByUserId(Integer userId);
 
     void receive(Integer id);
+
+    void deleteOrderById(Integer id);
+
+    List<Order> findOrderByStatus(Integer status);
+
+    void changeStatusById(Integer id, Integer status);
 }

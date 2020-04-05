@@ -1,12 +1,19 @@
 package cn.edu.ywb.pojo;
 
-import java.util.Calendar;
 
-public class Focus {
+public class WishList {
     private Integer id;
     private Integer goodId;
     private Integer userId;
-    private Calendar focustime;
+    private Good good;
+
+    public Good getGood() {
+        return good;
+    }
+
+    public void setGood(Good good) {
+        this.good = good;
+    }
 
     public Integer getId() {
         return id;
@@ -32,21 +39,13 @@ public class Focus {
         this.userId = userId;
     }
 
-    public Calendar getFocustime() {
-        return focustime;
-    }
-
-    public void setFocustime(Calendar focustime) {
-        this.focustime = focustime;
-    }
 
     @Override
     public String toString() {
-        return "Focus{" +
+        return "WishList{" +
                 "id=" + id +
                 ", goodId=" + goodId +
                 ", userId=" + userId +
-                ", focustime=" + focustime +
                 '}';
     }
 }

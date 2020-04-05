@@ -25,10 +25,57 @@
 <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
+    <script src="../js/jquery.min.js"></script>
 </head>
 
-<body>
+<body onload="load()">
+<script>
+    function load(){
+        $.ajax({
+            url:"/gpmall/wishList/findWishListByUserId.do",
+            type:"POST",
+            success:function () {
+                console.log("愿望清单加载成功！");
+            }
+        });
+    }
+
+
+    function addToCart(gid){
+        var formData = new FormData();
+        formData.append("gid",gid);
+        formData.append("number",1);
+        $.ajax({
+            url:"/gpmall/cart/addToCart.do",
+            type:"POST",
+            data:formData,
+            processData: false,   // jQuery不要去处理发送的数据
+            contentType: false,
+            success:function () {
+                load();
+                location.replace(location);
+            }
+        });
+    }
+    function removeGood(gid){
+        var formData = new FormData();
+        formData.append("gid",gid);
+        formData.append("number",1);
+        $.ajax({
+            url:"/gpmall/wishList/deleteByGoodIdAndUserId.do",
+            type:"POST",
+            data:formData,
+            processData: false,   // jQuery不要去处理发送的数据
+            contentType: false,
+            success:function () {
+                load();
+                location.replace(location);
+            }
+        });
+    }
+
+
+</script>
 
 <!-- Start Header Area -->
 <jsp:include page="header.jsp"></jsp:include>
@@ -50,7 +97,7 @@
                             <nav aria-label="breadcrumb">
                                 <h1>wishlist</h1>
                                 <ul class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="index.jsp"><i class="fa fa-home"></i></a></li>
                                     <li class="breadcrumb-item active" aria-current="page">wishlist</li>
                                 </ul>
                             </nav>
@@ -73,51 +120,28 @@
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th class="pro-thumbnail">Thumbnail</th>
-                                            <th class="pro-title">Product</th>
-                                            <th class="pro-price">Price</th>
-                                            <th class="pro-quantity">Stock Status</th>
-                                            <th class="pro-subtotal">Add to Cart</th>
-                                            <th class="pro-remove">Remove</th>
+                                            <th class="pro-thumbnail">缩略图</th>
+                                            <th class="pro-title">产品名称</th>
+                                            <th class="pro-price">价格</th>
+                                            <%--<th class="pro-quantity">Stock Status</th>--%>
+                                            <th class="pro-subtotal">加入购物车</th>
+                                            <th class="pro-remove">移除</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <c:forEach items="${sessionScope.wishListList}" var="wishList">
+
                                         <tr>
-                                            <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="assets/img/product/product-5.jpg" alt="Product" /></a></td>
-                                            <td class="pro-title"><a href="#">Rose bouquet white</a></td>
-                                            <td class="pro-price"><span>$295.00</span></td>
-                                            <td class="pro-quantity"><span class="text-success">In Stock</span></td>
-                                            <td class="pro-subtotal"><a href="cart.html" class="btn btn__bg">Add to
-                                                    Cart</a></td>
-                                            <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                            <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="${wishList.good.gpicture}" alt="Product" /></a></td>
+                                            <td class="pro-title"><a href="#">${wishList.good.gname}</a></td>
+                                            <td class="pro-price"><span>${wishList.good.goprice}</span></td>
+                                            <%--<td class="pro-quantity"><span class="text-success">In Stock</span></td>--%>
+                                            <td class="pro-subtotal"><button onclick="addToCart(${wishList.good.id})" class="btn btn__bg">加入购物车</button></td>
+                                            <td class="pro-remove"><button onclick="removeGood(${wishList.good.id})"><i class="fa fa-trash-o"></i></button></td>
                                         </tr>
-                                        <tr>
-                                            <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="assets/img/product/product-6.jpg" alt="Product" /></a></td>
-                                            <td class="pro-title"><a href="#">Orchid flower red stick</a></td>
-                                            <td class="pro-price"><span>$275.00</span></td>
-                                            <td class="pro-quantity"><span class="text-success">In Stock</span></td>
-                                            <td class="pro-subtotal"><a href="cart.html" class="btn btn__bg">Add to
-                                                    Cart</a></td>
-                                            <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="assets/img/product/product-7.jpg" alt="Product" /></a></td>
-                                            <td class="pro-title"><a href="#">Jasmine flowers white</a></td>
-                                            <td class="pro-price"><span>$295.00</span></td>
-                                            <td class="pro-quantity"><span class="text-danger">Stock Out</span></td>
-                                            <td class="pro-subtotal"><a href="cart.html" class="btn btn__bg disabled">Add
-                                                    to Cart</a></td>
-                                            <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="assets/img/product/product-8.jpg" alt="Product" /></a></td>
-                                            <td class="pro-title"><a href="#">Flowers bouquet pink</a></td>
-                                            <td class="pro-price"><span>$110.00</span></td>
-                                            <td class="pro-quantity"><span class="text-success">In Stock</span></td>
-                                            <td class="pro-subtotal"><a href="cart.html" class="btn btn__bg">Add to
-                                                    Cart</a></td>
-                                            <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                        </tr>
+                                    </c:forEach>
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -263,13 +287,13 @@
                         <ul>
                             <li class="minicart-item">
                                 <div class="minicart-thumb">
-                                    <a href="product-details.html">
+                                    <a href="product-details.jsp">
                                         <img src="assets/img/cart/cart-1.jpg" alt="product">
                                     </a>
                                 </div>
                                 <div class="minicart-content">
                                     <h3 class="product-name">
-                                        <a href="product-details.html">Flowers bouquet pink for all flower lovers</a>
+                                        <a href="product-details.jsp">Flowers bouquet pink for all flower lovers</a>
                                     </h3>
                                     <p>
                                         <span class="cart-quantity">1 <strong>&times;</strong></span>
@@ -280,13 +304,13 @@
                             </li>
                             <li class="minicart-item">
                                 <div class="minicart-thumb">
-                                    <a href="product-details.html">
+                                    <a href="product-details.jsp">
                                         <img src="assets/img/cart/cart-2.jpg" alt="product">
                                     </a>
                                 </div>
                                 <div class="minicart-content">
                                     <h3 class="product-name">
-                                        <a href="product-details.html">Jasmine flowers white for all flower lovers</a>
+                                        <a href="product-details.jsp">Jasmine flowers white for all flower lovers</a>
                                     </h3>
                                     <p>
                                         <span class="cart-quantity">1 <strong>&times;</strong></span>
@@ -320,8 +344,8 @@
                     </div>
 
                     <div class="minicart-button">
-                        <a href="cart.html"><i class="fa fa-shopping-cart"></i> view cart</a>
-                        <a href="cart.html"><i class="fa fa-share"></i> checkout</a>
+                        <a href="cart.jsp"><i class="fa fa-shopping-cart"></i> view cart</a>
+                        <a href="cart.jsp"><i class="fa fa-share"></i> checkout</a>
                     </div>
                 </div>
             </div>

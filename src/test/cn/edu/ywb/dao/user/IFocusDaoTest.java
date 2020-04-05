@@ -17,4 +17,8 @@ public class IFocusDaoTest {
     public void addToWishList(){
         focusDao.addToWishList(1,10);
     }
+    @Test
+    public void testdeleteByGoodIdAndUserId(){
+        focusDao.deleteByGoodIdAndUserId(1,11);
+    }
 }

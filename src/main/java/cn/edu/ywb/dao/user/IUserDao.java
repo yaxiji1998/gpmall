@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 public interface IUserDao {
 
     @Select("select * from user where name = #{username}")
@@ -18,4 +20,7 @@ public interface IUserDao {
 
     @Update("update user set password = #{password},gender = #{gender},phoneNumber = #{phoneNumber},age = #{age},email = #{email} where id = #{id}")
     void modifyUserInfo(User user);
+
+    @Select("select * from user")
+    List<User> findAllUser();
 }

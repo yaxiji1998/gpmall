@@ -14,7 +14,9 @@
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 
     <!-- Google fonts include -->
+<%--
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900%7CYesteryear" rel="stylesheet">
+--%>
 
     <!-- All Vendor & plugins CSS include -->
     <link href="assets/css/vendor.css" rel="stylesheet">
@@ -37,7 +39,39 @@
             url:"/gpmall/cart/findCartByUserId.do",
             type:"POST",
             success:function () {
-                alert("购物车加载成功！");
+                console.log("购物车加载成功！");
+            }
+        });
+    }
+
+    function addToCart(gid){
+        var formData = new FormData();
+        formData.append("gid",gid);
+        formData.append("number",1);
+        $.ajax({
+            url:"/gpmall/cart/addToCart.do",
+            type:"POST",
+            data:formData,
+            processData: false,   // jQuery不要去处理发送的数据
+            contentType: false,
+            success:function () {
+                alert("加入购物车成功！");
+            }
+        });
+    }
+
+    function addToWishList(gid){
+        var formData = new FormData();
+        formData.append("gid",gid);
+        formData.append("number",1);
+        $.ajax({
+            url:"/gpmall/wishList/addToWishList.do",
+            type:"POST",
+            data:formData,
+            processData: false,   // jQuery不要去处理发送的数据
+            contentType: false,
+            success:function () {
+                alert("加入愿望清单成功！");
             }
         });
     }
@@ -232,27 +266,29 @@
                 </div>
 
                 <div class="row mtn-40">
-                    <!-- product single item start -->
+                    <%--<!-- product single item start -->--%>
                     <c:forEach items="${sessionScope.allGood}" var="good">
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="product-item mt-40">
                             <figure class="product-thumb">
-                                <a href="product-details.jsp">
+                                <a href="product-details.jsp?id=${good.id}">
                                     <img class="pri-img" src="${good.gpicture}" alt="product" style="width: 268.02px;height: 268.02px">
-                                    <img class="sec-img" src="assets/img/product/product-2.jpg" alt="product">
+                                    <img class="sec-img" src="${good.gpicture}" alt="product" style="width: 268.02px;height: 268.02px">
                                 </a>
                                 <div class="product-badge">
                                     <div class="product-label new">
                                         <span>new</span>
                                     </div>
                                     <div class="product-label discount">
-                                        <span>10%</span>
+                                        <span></span>
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="wishlist.jsp" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
+                                    <button onclick="addToWishList(${good.id})" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></button>
+<%--
                                     <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="cart.jsp" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+--%>
+                                    <button onclick="addToCart(${good.id})" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></button>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -269,241 +305,8 @@
                     </c:forEach>
                     <!-- product single item end -->
 
-                    <!-- product single item start -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="product-item mt-40">
-                            <figure class="product-thumb">
-                                <a href="product-details.jsp">
-                                    <img class="pri-img" src="assets/img/product/product-3.jpg" alt="product">
-                                    <img class="sec-img" src="assets/img/product/product-4.jpg" alt="product">
-                                </a>
-                                <div class="product-badge">
-                                    <div class="product-label new">
-                                        <span>new</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <a href="wishlist.jsp" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="cart.jsp" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
-                                </div>
-                            </figure>
-                            <div class="product-caption">
-                                <p class="product-name">
-                                    <a href="product-details.jsp">Jasmine flowers white</a>
-                                </p>
-                                <div class="price-box">
-                                    <span class="price-regular">$60.00</span>
-                                    <span class="price-old"><del>$70.00</del></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- product single item end -->
 
-                    <!-- product single item start -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="product-item mt-40">
-                            <figure class="product-thumb">
-                                <a href="product-details.jsp">
-                                    <img class="pri-img" src="assets/img/product/product-5.jpg" alt="product">
-                                    <img class="sec-img" src="assets/img/product/product-6.jpg" alt="product">
-                                </a>
-                                <div class="product-badge">
-                                    <div class="product-label new">
-                                        <span>new</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <a href="wishlist.jsp" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="cart.jsp" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
-                                </div>
-                            </figure>
-                            <div class="product-caption">
-                                <p class="product-name">
-                                    <a href="product-details.jsp">Blossom bouquet flower</a>
-                                </p>
-                                <div class="price-box">
-                                    <span class="price-regular">$50.00</span>
-                                    <span class="price-old"><del>$80.00</del></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- product single item end -->
 
-                    <!-- product single item start -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="product-item mt-40">
-                            <figure class="product-thumb">
-                                <a href="product-details.jsp">
-                                    <img class="pri-img" src="assets/img/product/product-7.jpg" alt="product">
-                                    <img class="sec-img" src="assets/img/product/product-8.jpg" alt="product">
-                                </a>
-                                <div class="product-badge">
-                                    <div class="product-label new">
-                                        <span>new</span>
-                                    </div>
-                                    <div class="product-label discount">
-                                        <span>15%</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <a href="wishlist.jsp" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="cart.jsp" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
-                                </div>
-                            </figure>
-                            <div class="product-caption">
-                                <p class="product-name">
-                                    <a href="product-details.jsp">Hyacinth white stick</a>
-                                </p>
-                                <div class="price-box">
-                                    <span class="price-regular">$30.00</span>
-                                    <span class="price-old"><del>$55.00</del></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- product single item end -->
-
-                    <!-- product single item start -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="product-item mt-40">
-                            <figure class="product-thumb">
-                                <a href="product-details.jsp">
-                                    <img class="pri-img" src="assets/img/product/product-9.jpg" alt="product">
-                                    <img class="sec-img" src="assets/img/product/product-10.jpg" alt="product">
-                                </a>
-                                <div class="product-badge">
-                                    <div class="product-label new">
-                                        <span>new</span>
-                                    </div>
-                                    <div class="product-label discount">
-                                        <span>30%</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <a href="wishlist.jsp" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="cart.jsp" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
-                                </div>
-                            </figure>
-                            <div class="product-caption">
-                                <p class="product-name">
-                                    <a href="product-details.jsp">Orchid flower red stick</a>
-                                </p>
-                                <div class="price-box">
-                                    <span class="price-regular">$80.00</span>
-                                    <span class="price-old"><del>$90.00</del></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- product single item end -->
-
-                    <!-- product single item start -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="product-item mt-40">
-                            <figure class="product-thumb">
-                                <a href="product-details.jsp">
-                                    <img class="pri-img" src="assets/img/product/product-11.jpg" alt="product">
-                                    <img class="sec-img" src="assets/img/product/product-12.jpg" alt="product">
-                                </a>
-                                <div class="product-badge">
-                                    <div class="product-label new">
-                                        <span>new</span>
-                                    </div>
-                                    <div class="product-label discount">
-                                        <span>12%</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <a href="wishlist.jsp" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="cart.jsp" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
-                                </div>
-                            </figure>
-                            <div class="product-caption">
-                                <p class="product-name">
-                                    <a href="product-details.jsp">Flowers daisy pink stick</a>
-                                </p>
-                                <div class="price-box">
-                                    <span class="price-regular">$40.00</span>
-                                    <span class="price-old"><del>$50.00</del></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- product single item end -->
-
-                    <!-- product single item start -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="product-item mt-40">
-                            <figure class="product-thumb">
-                                <a href="product-details.jsp">
-                                    <img class="pri-img" src="assets/img/product/product-2.jpg" alt="product">
-                                    <img class="sec-img" src="assets/img/product/product-1.jpg" alt="product">
-                                </a>
-                                <div class="product-badge">
-                                    <div class="product-label new">
-                                        <span>new</span>
-                                    </div>
-                                    <div class="product-label discount">
-                                        <span>10%</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <a href="wishlist.jsp" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="cart.jsp" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
-                                </div>
-                            </figure>
-                            <div class="product-caption">
-                                <p class="product-name">
-                                    <a href="product-details.jsp">Rose bouquet white</a>
-                                </p>
-                                <div class="price-box">
-                                    <span class="price-regular">$55.00</span>
-                                    <span class="price-old"><del>$80.00</del></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- product single item end -->
-
-                    <!-- product single item start -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="product-item mt-40">
-                            <figure class="product-thumb">
-                                <a href="product-details.jsp">
-                                    <img class="pri-img" src="assets/img/product/product-4.jpg" alt="product">
-                                    <img class="sec-img" src="assets/img/product/product-3.jpg" alt="product">
-                                </a>
-                                <div class="product-badge">
-                                    <div class="product-label discount">
-                                        <span>10%</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <a href="wishlist.jsp" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="cart.jsp" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
-                                </div>
-                            </figure>
-                            <div class="product-caption">
-                                <p class="product-name">
-                                    <a href="product-details.jsp">Bouquet flowers pink</a>
-                                </p>
-                                <div class="price-box">
-                                    <span class="price-regular">$60.00</span>
-                                    <span class="price-old"><del>$70.00</del></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- product single item end -->
 
                     <div class="col-12">
                         <div class="view-more-btn">
@@ -562,12 +365,12 @@
         <!-- trending product area end -->
 
         <!-- Instagram Feed Area Start -->
-        <div class="instagram-feed-area">
+        <%--<div class="instagram-feed-area">
             <div class="instagram-feed-thumb">
                 <div id="instafeed" class="instagram-carousel" data-userid="6666969077" data-accesstoken="6666969077.1677ed0.d325f406d94c4dfab939137c5c2cc6c2">
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- Instagram Feed Area End -->
 
     </main>

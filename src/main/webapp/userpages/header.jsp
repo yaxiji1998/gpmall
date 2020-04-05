@@ -147,7 +147,7 @@
                                                 </li>--%>
                                             </ul>
                                         </li>
-                                        <li><p >Blog <i class="fa fa-angle-down"></i></p>
+                                        <%--<li><p >Blog <i class="fa fa-angle-down"></i></p>--%>
                                             <%--<ul class="dropdown">
                                                 <li><a href="blog-left-sidebar.jsp">blog left sidebar</a></li>
                                                 <li><a href="blog-right-sidebar.jsp">blog right sidebar</a></li>
@@ -180,8 +180,8 @@
                                             <i class="lnr lnr-user"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li><a href="../index.jsp">login</a></li>
-                                            <li><a href="../index.jsp">register</a></li>
+                                            <li><a href="../index.html">login</a></li>
+                                            <li><a href="../index.html">register</a></li>
                                             <li><a href="my-account.jsp">my account</a></li>
                                         </ul>
                                     </li>
@@ -189,15 +189,15 @@
                                         <a href="wishlist.jsp">
                                             <i class="lnr lnr-heart"></i>
                                             <c:if test="${sessionScope.user!=null}">
-                                            <div class="notification">0</div>
+                                            <%--<div class="notification"></div>--%>
 
                                             </c:if>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="minicart-btn">
+                                        <a href="cart.jsp" ><%--class="minicart-btn"--%>
                                             <i class="lnr lnr-cart"></i>
-                                            <div class="notification">2</div>
+                                            <%--<div class="notification"></div>--%>
                                         </a>
                                     </li>
                                 </ul>

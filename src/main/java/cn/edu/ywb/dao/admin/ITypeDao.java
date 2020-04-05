@@ -13,7 +13,7 @@ public interface ITypeDao {
     @Insert("insert into goodstype (typeName) values(#{typeName})")
     int addType(GoodsType type);
 
-    @Delete("delete from goodstype where typeName=#{typeName}")
+    @Delete("delete from goodstype where id=#{id}")
     int deleteType(GoodsType type);
 
     @Select("select * from goodstype where id=#{id}")

@@ -110,7 +110,7 @@ public class Order {
                 break;
                 case 2:this.statusString = "已发货";
                 break;
-                case 3:this.statusString = "交易完成";
+                case 3:this.statusString = "已收货";
                 break;
                 default:break;
             }

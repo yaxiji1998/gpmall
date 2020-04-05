@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
+import javax.jws.soap.SOAPBinding;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
@@ -88,5 +89,13 @@ public class UserController {
     }
 
 
+
+    @ResponseBody
+    @RequestMapping("/findAllUser.do")
+    public List<User> findAllUser(){
+        List<User> allUser = userService.findAllUser();
+
+        return allUser;
+    }
 
 }

@@ -25,4 +25,24 @@ public class OrderServiceImpl implements IOrderService {
     public void receive(Integer id) {
         orderDao.receive(id);
     }
+
+    @Override
+    public void deleteOrderById(Integer id) {
+        orderDao.deleteOrderById(id);
+    }
+
+    @Override
+    public List<Order> findOrderByStatus(Integer status) {
+        if(status==1){
+            return orderDao.findOrderByStatus1_2();
+        }else {
+            return orderDao.findOrderByStatus(status);
+
+        }
+    }
+
+    @Override
+    public void changeStatusById(Integer id, Integer status) {
+        orderDao.changeStatusById(id,status);
+    }
 }
