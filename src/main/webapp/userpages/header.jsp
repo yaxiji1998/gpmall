@@ -88,7 +88,7 @@
                                                 </li>
                                                 <li class="mega-title"><a href="#">column 02</a>
                                                     <ul>
-                                                        <li><a href="product-details.jsp">商品详情页</a></li>
+                                                        <li><a href="cart.jsp">购物车</a></li>
                                                        <%-- <li><a href="product-details-affiliate.jsp">product
                                                             details
                                                             affiliate</a></li>
@@ -100,7 +100,7 @@
                                                 </li>
                                                 <li class="mega-title"><a href="#">column 03</a>
                                                     <ul>
-                                                        <li><a href="cart.jsp">购物车</a></li>
+
                                                         <%--<li><a href="checkout.jsp">checkout</a></li>
                                                         <li><a href="compare.jsp">compare</a></li>--%>
                                                         <li><a href="wishlist.jsp">愿望清单</a></li>

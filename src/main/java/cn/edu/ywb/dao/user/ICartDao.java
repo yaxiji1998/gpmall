@@ -24,4 +24,7 @@ public interface ICartDao {
 
     @Update("update carttable set shoppingNumber = #{shoppingNumber} where id = #{id}")
     void updateCartNumberById(@Param(value = "shoppingNumber") Integer shoppingNumber, @Param("id") Integer id);
+
+    @Delete("delete from carttable where id = #{id}")
+    void deleteCartById(Integer id);
 }

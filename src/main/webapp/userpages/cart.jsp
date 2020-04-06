@@ -140,55 +140,12 @@
                                             </tr>
                                         </c:forEach>
                                     </c:if>
-                                        <tr>
-                                            <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="assets/img/product/product-1.jpg" alt="Product" /></a></td>
-                                            <td class="pro-title"><a href="#">Flowers bouquet pink</a></td>
-                                            <td class="pro-price"><span>$295.00</span></td>
-                                            <td class="pro-quantity">
-                                                <div class="pro-qty"><input type="text" value="1"></div>
-                                            </td>
-                                            <td class="pro-subtotal"><span>$295.00</span></td>
-                                            <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="assets/img/product/product-2.jpg" alt="Product" /></a></td>
-                                            <td class="pro-title"><a href="#">Jasmine flowers white</a></td>
-                                            <td class="pro-price"><span>$275.00</span></td>
-                                            <td class="pro-quantity">
-                                                <div class="pro-qty"><input type="text" value="2"></div>
-                                            </td>
-                                            <td class="pro-subtotal"><span>$550.00</span></td>
-                                            <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="assets/img/product/product-3.jpg" alt="Product" /></a></td>
-                                            <td class="pro-title"><a href="#">Blossom bouquet flower</a></td>
-                                            <td class="pro-price"><span>$295.00</span></td>
-                                            <td class="pro-quantity">
-                                                <div class="pro-qty">
-                                                    <input type="text" value="1" />
-                                                </div>
-                                            </td>
-                                            <td class="pro-subtotal"><span>$295.00</span></td>
-                                            <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="assets/img/product/product-4.jpg" alt="Product" /></a></td>
-                                            <td class="pro-title"><a href="#">Hyacinth white stick</a></td>
-                                            <td class="pro-price"><span>$110.00</span></td>
-                                            <td class="pro-quantity">
-                                                <div class="pro-qty">
-                                                    <input type="text" value="3" />
-                                                </div>
-                                            </td>
-                                            <td class="pro-subtotal"><span>$110.00</span></td>
-                                            <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
                             <!-- Cart Update Option -->
-                            <div class="cart-update-option d-block d-md-flex justify-content-between">
+                            <%--<div class="cart-update-option d-block d-md-flex justify-content-between">
                                 <div class="apply-coupon-wrapper">
                                     <form action="#" method="post" class=" d-block d-md-flex">
                                         <input type="text" placeholder="Enter Your Coupon Code" required />
@@ -198,7 +155,7 @@
                                 <div class="cart-update">
                                     <a href="#" class="btn btn__bg">Update Cart</a>
                                 </div>
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
                     <div class="row">

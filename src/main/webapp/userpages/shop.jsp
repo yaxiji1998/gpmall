@@ -79,7 +79,7 @@
     function selection(tid){
         var str = $("#amount").val();
 
-        alert(str);
+
               
             $(".col-md-4").each(function(){
                 var paraStr = $(this).children("p:hidden").text();
@@ -94,7 +94,7 @@
 
     function selectByPrice() {
         var str = $("#amount").val();
-        str = str.replace(/$,'');
+
             alert(str);
         $(".col-md-4").each(function(){
             var paraStr = $(this).children("p:hidden").text();

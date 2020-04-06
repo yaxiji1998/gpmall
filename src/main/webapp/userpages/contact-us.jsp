@@ -87,7 +87,7 @@
                                             <textarea placeholder="Message *" name="message" class="form-control2" required=""></textarea>
                                         </div>
                                         <div class="contact-btn">
-                                            <button class="btn btn__bg" type="submit">Send Message</button>
+                                            <a class="btn btn__bg" href="index.jsp">Send Message</a>
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-center">
@@ -100,17 +100,15 @@
                     <div class="col-lg-6">
                         <div class="contact-info">
                             <h2>contact us</h2>
-                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum
-                                est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum
-                                formas human.</p>
+                            <p>有问题欢迎打电话或者发邮件</p>
                             <ul>
-                                <li><i class="fa fa-fax"></i> Address : No 40 Baria Sreet 133/2 NewYork City</li>
-                                <li><i class="fa fa-phone"></i> info@yourdomain.com</li>
-                                <li><i class="fa fa-envelope-o"></i> +88013245657</li>
+                                <li><i class="fa fa-fax"></i> 北京市朝阳区平乐园100号</li>
+                                <li><i class="fa fa-phone"></i> yuwenbin@email.bjut.edu.cn</li>
+                                <li><i class="fa fa-envelope-o"></i> 15011329606</li>
                             </ul>
                             <div class="working-time">
-                                <h3>Working hours</h3>
-                                <p><span>Monday – Saturday:</span>08AM – 22PM</p>
+                                <h3>上班时间</h3>
+                                <p>每时每刻</p>
                             </div>
                         </div>
                     </div>

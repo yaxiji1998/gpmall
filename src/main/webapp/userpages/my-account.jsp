@@ -83,7 +83,7 @@
         var formData = new FormData();
         formData.append("id",id);
         $.ajax({
-            url:"/order/receive.do",
+            url:"/gpmall/order/receive.do",
             type:"POST",
             data:formData,
             processData: false,   // jQuery不要去处理发送的数据

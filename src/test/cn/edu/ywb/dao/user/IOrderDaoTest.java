@@ -1,5 +1,6 @@
 package cn.edu.ywb.dao.user;
 
+import cn.edu.ywb.pojo.Cart;
 import cn.edu.ywb.pojo.Order;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +20,9 @@ public class IOrderDaoTest {
     @Autowired
     private IOrderDao orderDao;
 
+    @Autowired
+    private ICartDao cartDao;
+
     @Test
     public void findOderByUserId(){
         List<Order> orderList = orderDao.findOrderByUserId(1);
@@ -28,5 +32,12 @@ public class IOrderDaoTest {
     @Test
     public void receive(){
         orderDao.receive(1);
+    }
+
+    @Test
+    public void addNewOrder(){
+
+        List<Cart> cartList = cartDao.findCartByUserId(2);
+        orderDao.addNewOrder(cartList.get(0),1);
     }
 }

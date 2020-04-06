@@ -1,9 +1,6 @@
 package cn.edu.ywb.dao.user;
 
-import cn.edu.ywb.pojo.Address;
-import cn.edu.ywb.pojo.Good;
-import cn.edu.ywb.pojo.Order;
-import cn.edu.ywb.pojo.User;
+import cn.edu.ywb.pojo.*;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -71,4 +68,7 @@ public interface IOrderDao {
     })
     List<Order> findOrderByStatus1_2();
 
+
+    @Insert("insert into ordertable (userId,goodId,addressId,status,amount,orderDate,shoppingNumber) values(#{c.userId},#{c.goodId},#{addressId},1,#{c.good.grprice}*#{c.shoppingNumber},SYSDATE(),#{c.shoppingNumber})")
+    void addNewOrder(@Param("c") Cart c ,@Param("addressId") Integer addressId);
 }

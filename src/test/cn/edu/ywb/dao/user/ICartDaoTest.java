@@ -34,4 +34,9 @@ public class ICartDaoTest {
     public void updateById(){
         cartDao.updateCartNumberById(5,1);
     }
+
+    @Test
+    public void deleteById(){
+        cartDao.deleteCartById(1);
+    }
 }

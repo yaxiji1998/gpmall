@@ -49,5 +49,17 @@ public class CartController {
         return "true";
     }
 
+    @ResponseBody
+    @RequestMapping("/pay.do")
+    public String pay(HttpServletRequest request){
+        List<Cart> cartList = (List<Cart>) request.getSession().getAttribute("cartList");
+        Boolean result = cartService.pay(cartList);
+        if(result){
+            return "true";
+        }else {
+            return "false";
+        }
+    }
+
 
 }

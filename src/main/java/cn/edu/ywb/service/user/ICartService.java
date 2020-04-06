@@ -10,4 +10,6 @@ public interface ICartService {
     List<Cart> findCartByUserId(Integer id);
 
     void updateCartNumberById(Integer shoppingNumber, Integer id);
+
+    Boolean pay(List<Cart> cartList);
 }
